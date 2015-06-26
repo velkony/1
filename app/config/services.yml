@@ -1,24 +1,26 @@
-# Learn more about services, parameters and containers at
-# http://symfony.com/doc/current/book/service_container.html
-parameters:
-#    parameter_name: value
-
-services:
-#    service_name:
-#        class: AppBundle\Directory\ClassName
-#        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
-
-
-#services:
-#    users.oauth.user_provider:
-#        class: Users\UsersBundle\OAuth\UserProvider
-#        arguments: [@session, @doctrine, @admin.checker, @request_stack]
-#    admin.checker:
-#        class: Users\UsersBundle\OAuth\UserProvider
-#        arguments: [@doctrine, %admins%]
+#parameters:
+#  my_user_provider.class:  Users\UsersBundle\Security\Core\User\FOSUBUserProvider
 
 
 
-#services:
-#      users.oauth.user_provider:
-#          class: Users\UsersBundle\OAuth\UserProvider
+#  services:
+#  #    users.example:
+#  #        class: Users\UsersBundle\Example
+#  #        arguments: [@service_id, "plain_value", %parameter%]
+#      kvartiri_user.form.handler.registration:
+#          class: Users\UsersBundle\Form\Handler\RegistrationFormHandler
+#          arguments: ["@fos_user.registration.form", "@request", "@fos_user.user_manager", "@fos_user.mailer","@fos_user.util.token_generator"]
+#          scope: request
+#          public: false
+#
+#
+#  #        //t avais deja mis le service poru le form handler?
+#  #        oui mais pour autre chose
+#  #        met le bon chemin de la classe qui pointe vers RegistrationFomHandler
+#  #        je vais te montrer mon service
+#
+#
+#
+#      my_user_provider:
+#          class: Users\UsersBundle\Security\Core\User\FOSUBUserProvider
+#          arguments: ["@fos_user.user_manager",{facebook: facebook_id}]

@@ -36,8 +36,12 @@ security:
             logout:
                 path:   /logout
                 target: /
-                success_handler: tracker_user.logout_success_handler
+                #success_handler: tracker_user.logout_success_handler
             anonymous:    true
+
+                    # mapping between resource owners (see below) and properties
+#                    properties:
+#                      facebook: facebookId
 
 
 

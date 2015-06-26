@@ -43,6 +43,10 @@ framework:
 twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
+#    globals :
+#        address : address
+#        phone : 06555555
+#        fax : 454654
 
 # Assetic Configuration
 assetic:
@@ -163,7 +167,7 @@ knp_paginator:
 
 hwi_oauth:
     http_client:
-        verify_peer: false		# set this for is HTTP is not secured
+        verify_peer: false		
     connect:
         account_connector: my_user_provider
     firewall_name: secure_area
@@ -175,8 +179,8 @@ hwi_oauth:
     resource_owners:
         facebook:
             type:                facebook
-            client_id:           1642041769341967
-            client_secret:       afa59e9c194bb78afcb28fcf155d2706
+            client_id:           1460839190882785
+            client_secret:       4650e0d2736d3d82552d54dd42612ef7
             scope:               ""
 
 

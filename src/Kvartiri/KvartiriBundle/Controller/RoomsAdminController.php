@@ -6,7 +6,6 @@ use Kvartiri\KvartiriBundle\Entity\HotelSeasons;
 use Kvartiri\KvartiriBundle\Entity\RoomSeasons;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-
 use Kvartiri\KvartiriBundle\Entity\Rooms;
 use Kvartiri\KvartiriBundle\Form\RoomsType;
 
@@ -14,9 +13,7 @@ use Kvartiri\KvartiriBundle\Form\RoomsType;
  * Rooms controller.
  *
  */
-
 class RoomsAdminController extends Controller {
-
 
     /**
      * Lists all Rooms entities.
@@ -28,8 +25,8 @@ class RoomsAdminController extends Controller {
         $entities = $em->getRepository('KvartiriBundle:Rooms')->findBy(array('hotel' => $hotelId));
 
         return $this->render('KvartiriBundle:Admin:Rooms/index.html.twig', array(
-            'entities' => $entities,
-            'hotelId' => $hotelId,
+                    'entities' => $entities,
+                    'hotelId' => $hotelId,
         ));
     }
 
@@ -79,15 +76,15 @@ class RoomsAdminController extends Controller {
             $em->flush();
 
             return $this->redirect($this->generateUrl('adminRooms_show', array(
-                'id' => $entity->getId(),
-                'hotelId' => $hotelId,
-                )));
+                                'id' => $entity->getId(),
+                                'hotelId' => $hotelId,
+            )));
         }
 
         return $this->render('KvartiriBundle:Admin:Rooms/new.html.twig', array(
-            'entity' => $entity,
-            'form' => $form->createView(),
-            'hotelsSeasons' => $entitiesHotelSeasons->getHotelSeasons(),
+                    'entity' => $entity,
+                    'form' => $form->createView(),
+                    'hotelsSeasons' => $entitiesHotelSeasons->getHotelSeasons(),
         ));
     }
 
@@ -139,10 +136,10 @@ class RoomsAdminController extends Controller {
         $form = $this->createCreateForm($entity, $hotelId);
 
         return $this->render('KvartiriBundle:Admin:Rooms/new.html.twig', array(
-            'entity' => $entity,
-            'form' => $form->createView(),
-            'hotelsSeasons' => $entitiesHotelSeasons->getHotelSeasons(),
-            'hotelId' => $hotelId,
+                    'entity' => $entity,
+                    'form' => $form->createView(),
+                    'hotelsSeasons' => $entitiesHotelSeasons->getHotelSeasons(),
+                    'hotelId' => $hotelId,
         ));
     }
 
@@ -150,7 +147,7 @@ class RoomsAdminController extends Controller {
      * Finds and displays a Rooms entity.
      *
      */
-    public function showAction($hotelId,$id) {
+    public function showAction($hotelId, $id) {
         $em = $this->getDoctrine()->getManager();
 
         $entity = $em->getRepository('KvartiriBundle:Rooms')->find($id);
@@ -162,9 +159,9 @@ class RoomsAdminController extends Controller {
         $deleteForm = $this->createDeleteForm($hotelId, $id);
 
         return $this->render('KvartiriBundle:Admin:Rooms/show.html.twig', array(
-            'entity' => $entity,
-            'hotelId' => $hotelId,
-            'delete_form' => $deleteForm->createView(),
+                    'entity' => $entity,
+                    'hotelId' => $hotelId,
+                    'delete_form' => $deleteForm->createView(),
         ));
     }
 
@@ -188,12 +185,14 @@ class RoomsAdminController extends Controller {
         $deleteForm = $this->createDeleteForm($hotelId, $id);
         $entitiesHotelSeasons = $em->getRepository('KvartiriBundle:Hotels')->find($hotelId);
 
+        // \Doctrine\Common\Util\Debug::dump(    $entitiesHotelSeasons->getrooms()->getRoomSeasons());
+        //    \Doctrine\Common\Util\Debug::dump($entitiesHotelSeasons);
         return $this->render('KvartiriBundle:Admin:Rooms/edit.html.twig', array(
-            'entity' => $entity,
-            'edit_form' => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
-//            'hotelsSeasons' => $entitiesHotelSeasons['hotelSeasons'],
-            'hotelId' => $hotelId,
+                    'entity' => $entity,
+                    'edit_form' => $editForm->createView(),
+                    'delete_form' => $deleteForm->createView(),
+                    'hotelsSeasons' => $entitiesHotelSeasons,
+                    'hotelId' => $hotelId,
         ));
     }
 
@@ -220,27 +219,63 @@ class RoomsAdminController extends Controller {
      *
      */
     public function updateAction(Request $request, $hotelId, $id) {
-
+//        foreach ($hotelSeason as $hotels) {
+//            $roomSeasons[$hotels] = new RoomSeasons();
+//
+//            // $rooms = new Rooms();
+//            $HotelSeasons = $em->getRepository('KvartiriBundle:HotelSeasons')->find($hotels);
+//
+//            $roomSeasons[$hotels]->setPrice($price[$index]);
+//            $roomSeasons[$hotels]->addHotelSeason($HotelSeasons);
+//            $entity->addRoomSeason($roomSeasons[$hotels]);
+//
+//            //$em->persist($value);
+//            //   $rooms->getRoomSeasons()->add($HotelSeasons);
+//            //   \Doctrine\Common\Util\Debug::dump($roomSeasons[0]);
+//            $index++;
+//        }
 
         $price = $request->get('price');
+        $hotels = $request->get('hotelseasons');
+
+        //   print_r($hotels);
         $em = $this->getDoctrine()->getManager();
         $entitiesHotelSeasons = $em->getRepository('KvartiriBundle:Hotels')->find($hotelId);
         $entity = $em->getRepository('KvartiriBundle:Rooms')->find($id);
-
-        /*         * Enregistrement des types de saison* */
-        foreach ($entity->getRoomSeasons() as $value) {
-
-            foreach ($value->getHotelSeasons() as $name) {
-
-                $name->setName($name->getName());
+        $index = 0;
+        foreach ($entitiesHotelSeasons->getrooms() as $value) {
+            foreach ($value->getRoomSeasons() as $item) {
+             $em->remove($item);
+             //   $entity->removeRoomSeason($item);
             }
         }
-        /*         * Enregistrement des prix dans pour chaque saison* */
-        $index = 0;
-        foreach ($entity->getRoomSeasons() as $value) {
-            $value->setPrice($price[$index]);
+        foreach ($hotels as $hotels) {
+            $roomSeasons[$hotels] = new RoomSeasons();
+
+            // $rooms = new Rooms();
+            $HotelSeasons = $em->getRepository('KvartiriBundle:HotelSeasons')->find($hotels);
+
+            $roomSeasons[$hotels]->setPrice($price[$index]);
+            $roomSeasons[$hotels]->addHotelSeason($HotelSeasons);
+            $entity->addRoomSeason($roomSeasons[$hotels]);
+
+            //$em->persist($value);
+            //   $rooms->getRoomSeasons()->add($HotelSeasons);
+            //   \Doctrine\Common\Util\Debug::dump($roomSeasons[0]);
             $index++;
         }
+
+
+
+        /*         * Enregistrement des prix dans pour chaque saison* */
+//        $index = 0;
+//        foreach ($entity->getRoomSeasons() as $value) {
+//            if ($value->getPrice() == "") {
+//                
+//            }
+//            $value->setPrice($price[$index]);
+//            $index++;
+//        }
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Rooms entity.');
         }
@@ -256,9 +291,9 @@ class RoomsAdminController extends Controller {
         }
 
         return $this->render('KvartiriBundle:Admin:Rooms/edit.html.twig', array(
-            'entity' => $entity,
-            'edit_form' => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
+                    'entity' => $entity,
+                    'edit_form' => $editForm->createView(),
+                    'delete_form' => $deleteForm->createView(),
 //            'hotelsSeasons' => $entitiesHotelSeasons,
         ));
     }
@@ -295,17 +330,14 @@ class RoomsAdminController extends Controller {
      */
     private function createDeleteForm($hotelId, $id) {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('adminRooms_delete', array('id' => $id, 'hotelId' => $hotelId)))
-            ->setMethod('DELETE')
-            ->add('submit', 'submit', array('label' => 'Delete'))
-            ->getForm()
-            ;
+                        ->setAction($this->generateUrl('adminRooms_delete', array('id' => $id, 'hotelId' => $hotelId)))
+                        ->setMethod('DELETE')
+                        ->add('submit', 'submit', array('label' => 'Delete'))
+                        ->getForm()
+        ;
     }
 
 }
-
-
-
 
 //class RoomsAdminController extends Controller
 //{

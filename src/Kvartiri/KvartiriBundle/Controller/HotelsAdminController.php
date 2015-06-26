@@ -4,39 +4,35 @@ namespace Kvartiri\KvartiriBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-
 use Kvartiri\KvartiriBundle\Entity\Hotels;
 use Kvartiri\KvartiriBundle\Form\HotelsType;
-
 use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Hotels controller.
  *
  */
-class HotelsAdminController extends Controller
-{
+class HotelsAdminController extends Controller {
 
     /**
      * Lists all Hotels entities.
      *
      */
-    public function indexAction()
-    {
+    public function indexAction() {
         $em = $this->getDoctrine()->getManager();
 
         $entities = $em->getRepository('KvartiriBundle:Hotels')->findAll();
 
         return $this->render('KvartiriBundle:Admin:Hotels/index.html.twig', array(
-            'entities' => $entities,
+                    'entities' => $entities,
         ));
     }
+
     /**
      * Creates a new Hotels entity.
      *
      */
-    public function createAction(Request $request)
-    {
+    public function createAction(Request $request) {
         $entity = new Hotels();
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
@@ -50,8 +46,8 @@ class HotelsAdminController extends Controller
         }
 
         return $this->render('KvartiriBundle:Admin:Hotels/new.html.twig', array(
-            'entity' => $entity,
-            'form'   => $form->createView(),
+                    'entity' => $entity,
+                    'form' => $form->createView(),
         ));
     }
 
@@ -62,8 +58,7 @@ class HotelsAdminController extends Controller
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createCreateForm(Hotels $entity)
-    {
+    private function createCreateForm(Hotels $entity) {
         $form = $this->createForm(new HotelsType(), $entity);
 
         $form->add('submit', 'submit', array('label' => 'Create'));
@@ -75,14 +70,13 @@ class HotelsAdminController extends Controller
      * Displays a form to create a new Hotels entity.
      *
      */
-    public function newAction()
-    {
+    public function newAction() {
         $entity = new Hotels();
-        $form   = $this->createCreateForm($entity);
+        $form = $this->createCreateForm($entity);
 
         return $this->render('KvartiriBundle:Admin:Hotels/new.html.twig', array(
-            'entity' => $entity,
-            'form'   => $form->createView(),
+                    'entity' => $entity,
+                    'form' => $form->createView(),
         ));
     }
 
@@ -90,8 +84,7 @@ class HotelsAdminController extends Controller
      * Finds and displays a Hotels entity.
      *
      */
-    public function showAction($id)
-    {
+    public function showAction($id) {
         $em = $this->getDoctrine()->getManager();
 
         $entity = $em->getRepository('KvartiriBundle:Hotels')->find($id);
@@ -103,8 +96,8 @@ class HotelsAdminController extends Controller
         $deleteForm = $this->createDeleteForm($id);
 
         return $this->render('KvartiriBundle:Admin:Hotels/show.html.twig', array(
-            'entity'      => $entity,
-            'delete_form' => $deleteForm->createView(),
+                    'entity' => $entity,
+                    'delete_form' => $deleteForm->createView(),
         ));
     }
 
@@ -112,8 +105,7 @@ class HotelsAdminController extends Controller
      * Displays a form to edit an existing Hotels entity.
      *
      */
-    public function editAction($id)
-    {
+    public function editAction($id) {
         $em = $this->getDoctrine()->getManager();
 
         $entity = $em->getRepository('KvartiriBundle:Hotels')->find($id);
@@ -140,33 +132,32 @@ class HotelsAdminController extends Controller
         $deleteForm = $this->createDeleteForm($id);
 
         return $this->render('KvartiriBundle:Admin:Hotels/edit.html.twig', array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
+                    'entity' => $entity,
+                    'edit_form' => $editForm->createView(),
+                    'delete_form' => $deleteForm->createView(),
         ));
     }
 
     /**
-    * Creates a form to edit a Hotels entity.
-    *
-    * @param Hotels $entity The entity
-    *
-    * @return \Symfony\Component\Form\Form The form
-    */
-    private function createEditForm(Hotels $entity)
-    {
+     * Creates a form to edit a Hotels entity.
+     *
+     * @param Hotels $entity The entity
+     *
+     * @return \Symfony\Component\Form\Form The form
+     */
+    private function createEditForm(Hotels $entity) {
         $form = $this->createForm(new HotelsType(), $entity);
 
         $form->add('submit', 'submit', array('label' => 'Update'));
 
         return $form;
     }
+
     /**
      * Edits an existing Hotels entity.
      *
      */
-    public function updateAction(Request $request, $id)
-    {
+    public function updateAction(Request $request, $id) {
         $em = $this->getDoctrine()->getManager();
 
         $entity = $em->getRepository('KvartiriBundle:Hotels')->find($id);
@@ -200,28 +191,42 @@ class HotelsAdminController extends Controller
             }
             foreach ($originalSeasons as $season) {
                 if (false == $entity->getHotelSeasons()->contains($season)) {
+
+                    foreach ($entity->getRooms() as $value) {
+
+                        foreach ($value->getRoomSeasons() as $roomseasons) {
+                            
+                            foreach ($roomseasons->getHotelSeasons() as $item) {
+                            
+                                if ($item->getname() == $season->getname()) {
+                                   // \Doctrine\Common\Util\Debug::dump($value->getRoomSeasons());
+                                $em->remove($roomseasons);
+                                }
+                            }
+                        }
+                    }
+
                     $em->remove($season);
                 }
             }
 
 
-            $em->flush();
-
+              $em->flush();
             return $this->redirect($this->generateUrl('hotelsAdminAddHotel_edit', array('id' => $id)));
         }
 
         return $this->render('KvartiriBundle:Admin:Hotels/edit.html.twig', array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
+                    'entity' => $entity,
+                    'edit_form' => $editForm->createView(),
+                    'delete_form' => $deleteForm->createView(),
         ));
     }
+
     /**
      * Deletes a Hotels entity.
      *
      */
-    public function deleteAction(Request $request, $id)
-    {
+    public function deleteAction(Request $request, $id) {
         $form = $this->createDeleteForm($id);
         $form->handleRequest($request);
 
@@ -247,13 +252,13 @@ class HotelsAdminController extends Controller
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createDeleteForm($id)
-    {
+    private function createDeleteForm($id) {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('hotelsAdminAddHotel_delete', array('id' => $id)))
-            ->setMethod('DELETE')
-            ->add('submit', 'submit', array('label' => 'Delete'))
-            ->getForm()
+                        ->setAction($this->generateUrl('hotelsAdminAddHotel_delete', array('id' => $id)))
+                        ->setMethod('DELETE')
+                        ->add('submit', 'submit', array('label' => 'Delete'))
+                        ->getForm()
         ;
     }
+
 }

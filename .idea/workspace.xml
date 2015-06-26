@@ -1,52 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9dd4370e-32fe-4f88-9339-783dea3c4e5d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Users/UsersBundle/Security/Core/User/FOSUBUserProvider.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Users/UsersBundle/OAuth/UserProvider.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/calendarPromotionPeriod.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/AppKernel.php" afterPath="$PROJECT_DIR$/app/AppKernel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Kvartiri/KvartiriBundle/Controller/HotelsController.php" afterPath="$PROJECT_DIR$/src/Kvartiri/KvartiriBundle/Controller/HotelsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Kvartiri/KvartiriBundle/Entity/Images.php" afterPath="$PROJECT_DIR$/src/Kvartiri/KvartiriBundle/Entity/Images.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Kvartiri/KvartiriBundle/Form/ImagesType.php" afterPath="$PROJECT_DIR$/src/Kvartiri/KvartiriBundle/Form/ImagesType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Kvartiri/KvartiriBundle/Entity/PromotionEarlyBooking.php" afterPath="$PROJECT_DIR$/src/Kvartiri/KvartiriBundle/Entity/PromotionEarlyBooking.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Kvartiri/KvartiriBundle/Form/PromotionEarlyBookingType.php" afterPath="$PROJECT_DIR$/src/Kvartiri/KvartiriBundle/Form/PromotionEarlyBookingType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Kvartiri/KvartiriBundle/Entity/PromotionFixedDates.php" afterPath="$PROJECT_DIR$/src/Kvartiri/KvartiriBundle/Entity/PromotionFixedDates.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Kvartiri/KvartiriBundle/Entity/PromotionGroup.php" afterPath="$PROJECT_DIR$/src/Kvartiri/KvartiriBundle/Entity/PromotionGroup.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Kvartiri/KvartiriBundle/Entity/PromotionMoreNights.php" afterPath="$PROJECT_DIR$/src/Kvartiri/KvartiriBundle/Entity/PromotionMoreNights.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Kvartiri/KvartiriBundle/Form/PromotionMoreNightsType.php" afterPath="$PROJECT_DIR$/src/Kvartiri/KvartiriBundle/Form/PromotionMoreNightsType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Kvartiri/KvartiriBundle/Entity/PromotionPeriod.php" afterPath="$PROJECT_DIR$/src/Kvartiri/KvartiriBundle/Entity/PromotionPeriod.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Kvartiri/KvartiriBundle/Entity/Promotions.php" afterPath="$PROJECT_DIR$/src/Kvartiri/KvartiriBundle/Entity/Promotions.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Kvartiri/KvartiriBundle/Form/PromotionsType.php" afterPath="$PROJECT_DIR$/src/Kvartiri/KvartiriBundle/Form/PromotionsType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Kvartiri/KvartiriBundle/Entity/ReductionChildren.php" afterPath="$PROJECT_DIR$/src/Kvartiri/KvartiriBundle/Entity/ReductionChildren.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Kvartiri/KvartiriBundle/Form/ReductionChildrenType.php" afterPath="$PROJECT_DIR$/src/Kvartiri/KvartiriBundle/Form/ReductionChildrenType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Kvartiri/KvartiriBundle/Entity/RoomTypes.php" afterPath="$PROJECT_DIR$/src/Kvartiri/KvartiriBundle/Entity/RoomTypes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Users/UsersBundle/Entity/RoomsRequests.php" afterPath="$PROJECT_DIR$/src/Users/UsersBundle/Entity/RoomsRequests.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Users/UsersBundle/Form/RoomsRequestsType.php" afterPath="$PROJECT_DIR$/src/Users/UsersBundle/Form/RoomsRequestsType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/SymfonyRequirements.php" afterPath="$PROJECT_DIR$/app/SymfonyRequirements.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Users/UsersBundle/Resources/views/Users/UpdateUsers.html.twig" afterPath="$PROJECT_DIR$/src/Users/UsersBundle/Resources/views/Users/UpdateUsers.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Users/UsersBundle/Entity/Users.php" afterPath="$PROJECT_DIR$/src/Users/UsersBundle/Entity/Users.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/check.php" afterPath="$PROJECT_DIR$/app/check.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/config.php" afterPath="$PROJECT_DIR$/web/config.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/config.yml" afterPath="$PROJECT_DIR$/app/config/config.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Kvartiri/KvartiriBundle/Resources/views/Admin/Promotions/edit.html.twig" afterPath="$PROJECT_DIR$/src/Kvartiri/KvartiriBundle/Resources/views/Admin/Promotions/edit.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Kvartiri/KvartiriBundle/Resources/views/Admin/Rooms/edit.html.twig" afterPath="$PROJECT_DIR$/src/Kvartiri/KvartiriBundle/Resources/views/Admin/Rooms/edit.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Kvartiri/KvartiriBundle/Resources/views/Default/selection/layout/favoriteHotels.html.twig" afterPath="$PROJECT_DIR$/src/Kvartiri/KvartiriBundle/Resources/views/Default/selection/layout/favoriteHotels.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Kvartiri/KvartiriBundle/Resources/views/Default/hotels/layout/hotels.html.twig" afterPath="$PROJECT_DIR$/src/Kvartiri/KvartiriBundle/Resources/views/Default/hotels/layout/hotels.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/layout/layout.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/layout/layout.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Kvartiri/ControlPanelBundle/Resources/views/ControlPanel/layout/layout.html.twig" afterPath="$PROJECT_DIR$/src/Kvartiri/ControlPanelBundle/Resources/views/ControlPanel/layout/layout.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Security/login.html.twig" afterPath="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Security/login.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Kvartiri/KvartiriBundle/Resources/views/Admin/Promotions/new.html.twig" afterPath="$PROJECT_DIR$/src/Kvartiri/KvartiriBundle/Resources/views/Admin/Promotions/new.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Users/UsersBundle/Resources/views/ClientsRequests/newRequest.html.twig" afterPath="$PROJECT_DIR$/src/Users/UsersBundle/Resources/views/ClientsRequests/newRequest.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Kvartiri/KvartiriBundle/Resources/views/Default/hotels/layout/presentationHotel.html.twig" afterPath="$PROJECT_DIR$/src/Kvartiri/KvartiriBundle/Resources/views/Default/hotels/layout/presentationHotel.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/promotionPeriodForm.js" afterPath="$PROJECT_DIR$/web/js/promotionPeriodForm.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/routing.yml" afterPath="$PROJECT_DIR$/app/config/routing.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/security.yml" afterPath="$PROJECT_DIR$/app/config/security.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/services.yml" afterPath="$PROJECT_DIR$/app/config/services.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Users/UsersBundle/Resources/config/services.yml" afterPath="$PROJECT_DIR$/src/Users/UsersBundle/Resources/config/services.yml" />
-    </list>
+    <list default="true" id="9dd4370e-32fe-4f88-9339-783dea3c4e5d" name="Default" comment="" />
     <ignored path="project-kvartiri.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -75,7 +30,68 @@
     <favorites_list name="project-kvartiri" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="config.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/config/config.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="2703" max-vertical-offset="3944">
+              <caret line="182" column="65" selection-start-line="182" selection-start-column="65" selection-end-line="182" selection-end-column="65" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Images.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Kvartiri/KvartiriBundle/Entity/Images.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-86.80769" vertical-offset="735" max-vertical-offset="3264">
+              <caret line="177" column="5" selection-start-line="177" selection-start-column="5" selection-end-line="177" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="security.yml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/config/security.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="1.3852692" vertical-offset="310" max-vertical-offset="1887">
+              <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="composer.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/composer.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-16.615385" vertical-offset="248" max-vertical-offset="1513">
+              <caret line="40" column="25" selection-start-line="40" selection-start-column="9" selection-end-line="40" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="parameters.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
+              <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="services.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Users/UsersBundle/Resources/config/services.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="476">
+              <caret line="17" column="39" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -83,7 +99,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/web/js/1.js" />
         <option value="$PROJECT_DIR$/web/js/calendarPromotionFixedDates.js" />
         <option value="$PROJECT_DIR$/src/Kvartiri/KvartiriBundle/Entity/RoomEquipment.php" />
         <option value="$PROJECT_DIR$/src/Kvartiri/KvartiriBundle/Entity/Rooms.php" />
@@ -124,16 +139,17 @@
         <option value="$PROJECT_DIR$/app/AppKernel.php" />
         <option value="$PROJECT_DIR$/src/Users/UsersBundle/UserProvider.php" />
         <option value="$PROJECT_DIR$/src/Users/UsersBundle/OAuth/UserProvider.php" />
-        <option value="$PROJECT_DIR$/app/config/services.yml" />
         <option value="$PROJECT_DIR$/src/Users/UsersBundle/Resources/config/services.xml" />
         <option value="$PROJECT_DIR$/app/config/routing.yml" />
         <option value="$PROJECT_DIR$/src/Users/UsersBundle/Security/Core/User/FOSUBUserProvider.php" />
-        <option value="$PROJECT_DIR$/src/Users/UsersBundle/Resources/config/services.yml" />
         <option value="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Security/login.html.twig" />
-        <option value="$PROJECT_DIR$/app/config/security.yml" />
         <option value="$PROJECT_DIR$/src/Users/UsersBundle/Entity/Users.php" />
         <option value="$PROJECT_DIR$/app/config/parameters.yml" />
+        <option value="$PROJECT_DIR$/src/Kvartiri/KvartiriBundle/Controller/HotelsAdminController.php" />
+        <option value="$PROJECT_DIR$/app/config/services.yml" />
+        <option value="$PROJECT_DIR$/src/Users/UsersBundle/Resources/config/services.yml" />
         <option value="$PROJECT_DIR$/app/config/config.yml" />
+        <option value="$PROJECT_DIR$/app/config/security.yml" />
       </list>
     </option>
   </component>
@@ -142,10 +158,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1288" />
+    <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1296" />
-    <option name="height" value="736" />
+    <option name="height" value="699" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -170,6 +186,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -188,23 +205,8 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="project-kvartiri" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="project-kvartiri" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -224,11 +226,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\project-kvartiri\app\config" />
+      <recent name="C:\xampp\htdocs\project-kvartiri\src\Kvartiri\KvartiriBundle\Controller" />
       <recent name="C:\xampp\htdocs\project-kvartiri\src\Kvartiri\KvartiriBundle\Resources\views\Admin\Rooms" />
       <recent name="C:\xampp\htdocs\project-kvartiri\web\js" />
       <recent name="C:\xampp\htdocs\project-kvartiri\src\Kvartiri\KvartiriBundle\Repository" />
-      <recent name="C:\xampp\htdocs\project-kvartiri\src\Kvartiri\KvartiriBundle\Entity" />
-      <recent name="C:\xampp\htdocs\project-kvartiri\src\Users\UsersBundle\Controller" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\project-kvartiri\src\Users\UsersBundle\OAuth" />
@@ -301,16 +303,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1288" y="-8" width="1296" height="736" extended-state="6" />
+    <frame x="-8" y="-8" width="1296" height="699" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.0528169" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.49421486" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32922536" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32922536" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.029935274" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2880259" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26779935" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.0" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32922536" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -328,11 +330,11 @@
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.0528169" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.016528925" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.0" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.0" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32922536" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.029935274" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.029935274" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928804" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -342,10 +344,10 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27427185" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26779935" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -371,6 +373,14 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app/config/services.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Users/UsersBundle/Resources/views/Users/ListeUsers.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.5687732" vertical-offset="306" max-vertical-offset="1105">
@@ -389,13 +399,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.74047184" vertical-offset="799" max-vertical-offset="2567">
           <caret line="26" column="30" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Kvartiri/KvartiriBundle/Entity/Images.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.692307" vertical-offset="2679" max-vertical-offset="3281">
-          <caret line="177" column="5" selection-start-line="177" selection-start-column="5" selection-end-line="177" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -634,15 +637,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.27767694" vertical-offset="0" max-vertical-offset="1785">
           <caret line="9" column="28" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.78402907" vertical-offset="248" max-vertical-offset="1513">
-          <caret line="40" column="39" selection-start-line="40" selection-start-column="39" selection-end-line="40" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -650,7 +644,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.75317603" vertical-offset="44" max-vertical-offset="867">
           <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -658,7 +651,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.82495666" vertical-offset="153" max-vertical-offset="1258">
           <caret line="37" column="34" selection-start-line="37" selection-start-column="34" selection-end-line="37" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -666,15 +658,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6003717" vertical-offset="204" max-vertical-offset="935">
           <caret line="31" column="14" selection-start-line="31" selection-start-column="14" selection-end-line="31" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Users/UsersBundle/Resources/config/services.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.66312057" vertical-offset="0" max-vertical-offset="564">
-          <caret line="22" column="67" selection-start-line="22" selection-start-column="67" selection-end-line="22" selection-end-column="67" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -682,31 +665,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.936803" vertical-offset="2420" max-vertical-offset="3094">
           <caret line="173" column="5" selection-start-line="173" selection-start-column="5" selection-end-line="173" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/services.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3830156" vertical-offset="0" max-vertical-offset="577">
-          <caret line="13" column="52" selection-start-line="13" selection-start-column="52" selection-end-line="13" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/security.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.032929" vertical-offset="153" max-vertical-offset="1819">
-          <caret line="78" column="0" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35355285" vertical-offset="0" max-vertical-offset="577">
-          <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -714,16 +672,68 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.1288567" vertical-offset="639" max-vertical-offset="1394">
           <caret line="1" column="46" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="46" />
-          <folding>
-            <element signature="e#55#119#0#PHP" expanded="true" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Kvartiri/KvartiriBundle/Controller/RoomsAdminController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="9809">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/services.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.032258064" vertical-offset="0" max-vertical-offset="527">
+          <caret line="1" column="8" selection-start-line="0" selection-start-column="6" selection-end-line="1" selection-end-column="8" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/config/config.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3067376" vertical-offset="2683" max-vertical-offset="3876">
-          <caret line="168" column="30" selection-start-line="168" selection-start-column="30" selection-end-line="168" selection-end-column="30" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="2703" max-vertical-offset="3944">
+          <caret line="182" column="65" selection-start-line="182" selection-start-column="65" selection-end-line="182" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Kvartiri/KvartiriBundle/Entity/Images.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-86.80769" vertical-offset="735" max-vertical-offset="3264">
+          <caret line="177" column="5" selection-start-line="177" selection-start-column="5" selection-end-line="177" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Users/UsersBundle/Resources/config/services.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="476">
+          <caret line="17" column="39" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
+          <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-16.615385" vertical-offset="248" max-vertical-offset="1513">
+          <caret line="40" column="25" selection-start-line="40" selection-start-column="9" selection-end-line="40" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/security.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.3852692" vertical-offset="310" max-vertical-offset="1887">
+          <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
           <folding />
         </state>
       </provider>
