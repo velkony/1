@@ -1,0 +1,30 @@
+adminPromotions:
+    path:     /{hotelId}
+    defaults: { _controller: "KvartiriBundle:PromotionsAdmin:index" }
+
+adminPromotions_show:
+    path:     /{hotelId}/{id}/show
+    defaults: { _controller: "KvartiriBundle:PromotionsAdmin:show" }
+
+adminPromotions_new:
+    path:     /{hotelId}/new
+    defaults: { _controller: "KvartiriBundle:PromotionsAdmin:new" }
+
+adminPromotions_create:
+    path:     /{hotelId}/create
+    defaults: { _controller: "KvartiriBundle:PromotionsAdmin:create" }
+    methods:  POST
+
+adminPromotions_edit:
+    path:     /{hotelId}/{id}/edit
+    defaults: { _controller: "KvartiriBundle:PromotionsAdmin:edit" }
+
+adminPromotions_update:
+    path:     /{hotelId}/{id}/update
+    defaults: { _controller: "KvartiriBundle:PromotionsAdmin:update" }
+    methods:  [POST, PUT]
+
+adminPromotions_delete:
+    path:     /{hotelId}/{id}/delete
+    defaults: { _controller: "KvartiriBundle:PromotionsAdmin:delete" }
+    methods:  [POST, DELETE]

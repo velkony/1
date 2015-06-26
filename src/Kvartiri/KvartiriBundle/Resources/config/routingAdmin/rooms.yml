@@ -1,0 +1,30 @@
+adminRooms:
+    path:     /{hotelId}
+    defaults: { _controller: "KvartiriBundle:RoomsAdmin:index" }
+
+adminRooms_show:
+    path:     /{hotelId}/{id}/show
+    defaults: { _controller: "KvartiriBundle:RoomsAdmin:show" }
+
+adminRooms_new:
+    path:     /{hotelId}/new
+    defaults: { _controller: "KvartiriBundle:RoomsAdmin:new" }
+
+adminRooms_create:
+    path:     /{hotelId}/create
+    defaults: { _controller: "KvartiriBundle:RoomsAdmin:create" }
+    methods:  POST
+
+adminRooms_edit:
+    path:     /{hotelId}/{id}/edit
+    defaults: { _controller: "KvartiriBundle:RoomsAdmin:edit" }
+
+adminRooms_update:
+    path:     /{hotelId}/{id}/update
+    defaults: { _controller: "KvartiriBundle:RoomsAdmin:update" }
+    methods:  [POST, PUT]
+
+adminRooms_delete:
+    path:     /{hotelId}/{id}/delete
+    defaults: { _controller: "KvartiriBundle:RoomsAdmin:delete" }
+    methods:  [POST, DELETE]

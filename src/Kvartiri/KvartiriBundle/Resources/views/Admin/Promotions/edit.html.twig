@@ -1,0 +1,30 @@
+{% extends "::layout/layoutAdmin.html.twig" %}
+
+{% block body -%}
+    <h1>Promotions edit</h1>
+
+    {{ form(edit_form) }}
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('adminPromotions', { 'hotelId': hotelId }) }}">
+            Back to the list
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}
+
+{% block javascripts %}
+
+    <script src="{{ asset('js/promotionEarlyBookingForm.js') }}"></script>
+    <script src="{{ asset('js/promotionFixedDatesForm.js') }}"></script>
+    <script src="{{ asset('js/promotionGroupForm.js') }}"></script>
+    <script src="{{ asset('js/promotionMoreNightsForm.js') }}"></script>
+    <script src="{{ asset('js/promotionPeriodForm.js') }}"></script>
+    <script src="{{ asset('js/reductionChildrenForm.js') }}"></script>
+
+    <script src="{{ asset('js/calendarPromotionFixedDates.js') }}"></script>
+    <script src="{{ asset('js/calendarPromotionPeriodEdit.js') }}"></script>
+
+{% endblock %}

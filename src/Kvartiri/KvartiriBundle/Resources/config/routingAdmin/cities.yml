@@ -1,0 +1,30 @@
+adminCities:
+    path:     /
+    defaults: { _controller: "KvartiriBundle:CitiesAdmin:index" }
+
+adminCities_show:
+    path:     /{id}/show
+    defaults: { _controller: "KvartiriBundle:CitiesAdmin:show" }
+
+adminCities_new:
+    path:     /new
+    defaults: { _controller: "KvartiriBundle:CitiesAdmin:new" }
+
+adminCities_create:
+    path:     /create
+    defaults: { _controller: "KvartiriBundle:CitiesAdmin:create" }
+    methods:  POST
+
+adminCities_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "KvartiriBundle:CitiesAdmin:edit" }
+
+adminCities_update:
+    path:     /{id}/update
+    defaults: { _controller: "KvartiriBundle:CitiesAdmin:update" }
+    methods:  [POST, PUT]
+
+adminCities_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "KvartiriBundle:CitiesAdmin:delete" }
+    methods:  [POST, DELETE]

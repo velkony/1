@@ -1,0 +1,15 @@
+Type:
+{#Type: {{ hotel['hotel-type'] }}#}
+{% if hotel['hotel-type'] == 1 %}
+    {{ 'Hotel' }}
+{% elseif hotel['hotel-type'] == 2%}
+    {{ 'Hostel' }}
+{% elseif hotel['hotel-type'] == 3%}
+    {{ 'Guesthouse' }}
+{% elseif hotel['hotel-type'] == 4%}
+    {{ 'Studio' }}
+    {#{% elseif hotel['hotel-type'] %}#}
+    {#Apartment#}
+    {#{% elseif hotel['hotel-type'] %}#}
+    {#Single room#}
+{% endif %}

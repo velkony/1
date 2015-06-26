@@ -1,0 +1,59 @@
+{% extends "::layout/layout.html.twig" %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+
+            <div class="span3">
+                {% include '::modulesUsed/navigation.html.twig' %}
+            </div>
+
+            <div class="span9">
+                {% if hotels|length != 0 %}
+                    <ul class="thumbnails">
+                        {% for hotel in hotels %}
+
+                            <li class="span3">
+                                <div class="thumbnail">
+                                    {% for image in hotel.images %}
+                                        {% if loop.first %}
+                                            <a href="{{ path('presentationHotel', {'id' : hotel.id}) }}">
+                                                <img src="{{ asset('img/hotels/'~image.pathIamgeSmall) }}" alt="Greek Hotels" class="img-rounded" style="width:300px;height:224px">
+                                                {#<img src="{{ image.pathIamgeSmall }}" alt="Greek Hotels" width="300" height="300">#}
+                                            </a>
+                                        {% endif %}
+                                    {% endfor %}
+                                    {#<img src="{{ image.pathIamgeSmall }}" alt="Greek Hotels" width="300" height="300">#}
+                                    <div class="caption">
+                                        <h4>{{ hotel.name }}</h4>
+                                        {#{{ dump(hotel.hotelType) }}#}
+                                        <p>{% include 'KvartiriBundle:Default:hotels/details/typeHotels.html.twig' %}</p>
+                                        <a class="btn btn-primary" href="{{ path('presentationHotel', {'id' : hotel.id}) }}">More informations</a>
+                                        <a class="btn btn-success" href="{{ path('selection') }}">Selection</a>
+                                    </div>
+                                </div>
+                            </li>
+                        {% endfor %}
+                    </ul>
+
+                    <div class="pagination">
+                        <ul>
+                            <li class="disabled"><span>Back</span></li>
+                            <li class="disabled"><span>1</span></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li><a href="#">Next</a></li>
+                        </ul>
+                    </div>
+                {% else %}
+                    There isn't an Hotel
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+

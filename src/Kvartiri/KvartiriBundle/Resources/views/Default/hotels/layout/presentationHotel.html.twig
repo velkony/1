@@ -1,0 +1,216 @@
+{% extends "::layout/layout.html.twig" %}
+
+{#{% block wordsKeys %}{{ hotel.name }}{% endblock %}#}
+{#{% block description %}{{ hotel.name }}{% endblock %}#}
+{% block body %}
+
+
+<div class="container">
+    <div class="row">
+        <div class="span12">
+            <div class="row">
+                <div class="span12">
+                    {% for image in media['images'] %}
+                        {#{{ dump(image) }}#}
+                        <img src="{{ asset(image['image']) }}" alt="{{ image['image-alt'] }}" class="img-rounded" style="width:300px;height:224px">
+                    {% endfor %}
+                </div>
+
+                {#{{ dump(hotelRooms[0]['seasons'][0].price) }}#}
+                {#{{ dump(data) }}#}
+
+
+                <div class="span9">
+                    <h4>{{ hotelName }}</h4>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>{{ 'Цени на рецепция за:' }}<br><br></th>
+                            {% for season in data %}
+                                <th>{{ season['hotel-season-start']|date('d/m/Y')}}<br>
+                                    {{ season['hotel-season-finish']|date('d/m/Y') }}</th>
+
+                                {#{% for reduction in season['hotel-season-reduction'] %}#}
+                                    {#{% if reduction['percent'] %}#}
+                                    {#<th>{{ " Промоция " ~  reduction['start']|date('d/m/Y') ~ " - " ~  reduction['finish']|date('d/m/Y')}}</th>#}
+                                    {#{% endif %}#}
+                                {#{% endfor %}#}
+                            {% endfor %}
+                            </tr>
+                        </thead>
+                        <tbody>
+{#///////////////// Single Room /////////////////////////////////#}
+                                <tr>
+                                    <td>Single Room</td>
+                                {% for season in data %}
+                                    <td>
+                                    {% for room in season['rooms'] %}
+                                        {% if room['type'] == 1 and season['hotel-available'] == true %}
+                                            {{ room['price'] }}
+                                        {% elseif room['type'] == 1 and season['hotel-available'] == false %}
+                                            {{ 'close' }}
+                                        {% endif %}
+                                    {% endfor %}
+                                    </td>
+                                {% endfor %}
+                                </tr>
+{#///////////////// Double Room /////////////////////////////////#}
+                                <tr>
+                                    <td>Double Room</td>
+                                    {% for season in data %}
+                                        <td>
+                                            {% for room in season['rooms'] %}
+                                                {% if room['type'] == 2 and season['hotel-available'] == true %}
+                                                    {{ room['price'] }}
+                                                {% elseif room['type'] == 2 and season['hotel-available'] == false %}
+                                                    {{ 'close' }}
+                                                {% endif %}
+                                            {% endfor %}
+                                        </td>
+                                    {% endfor %}
+                                </tr>
+{#///////////////// Triple Room /////////////////////////////////#}
+                                <tr>
+                                    <td>Triple Room</td>
+                                    {% for season in data %}
+                                        <td>
+                                            {% for room in season['rooms'] %}
+                                                {% if room['type'] == 3 and season['hotel-available'] == true %}
+                                                    {{ room['price'] }}
+                                                {% elseif room['type'] == 3 and season['hotel-available'] == false %}
+                                                    {{ 'close' }}
+                                                {% endif %}
+                                            {% endfor %}
+                                        </td>
+                                    {% endfor %}
+                                </tr>
+{#///////////////// QuadrupleRoom /////////////////////////////////#}
+                                <tr>
+                                    <td>Quadruple Room</td>
+                                    {% for season in data %}
+                                        <td>
+                                            {% for room in season['rooms'] %}
+                                                {% if room['type'] == 4 and season['hotel-available'] == true %}
+                                                    {{ room['price'] }}
+                                                {% elseif room['type'] == 4 and season['hotel-available'] == false %}
+                                                    {{ 'close' }}
+                                                {% endif %}
+                                            {% endfor %}
+                                        </td>
+                                    {% endfor %}
+                                </tr>
+{#///////////////// Apartement /////////////////////////////////#}
+                                <tr>
+                                    <td>Apartement</td>
+                                    {% for season in data %}
+                                        <td>
+                                            {% for room in season['rooms'] %}
+                                                {% if room['type'] == 5 and season['hotel-available'] == true %}
+                                                    {{ room['price'] }}
+                                                {% elseif room['type'] == 5 and season['hotel-available'] == false %}
+                                                    {{ 'close' }}
+                                                {% endif %}
+                                            {% endfor %}
+                                        </td>
+                                    {% endfor %}
+                                </tr>
+{#///////////////// Studio /////////////////////////////////#}
+                                <tr>
+                                    <td>Studio</td>
+                                    {% for season in data %}
+                                        <td>
+                                            {% for room in season['rooms'] %}
+                                                {% if room['type'] == 6 and season['hotel-available'] == true %}
+                                                    {{ room['price'] }}
+                                                {% elseif room['type'] == 6 and season['hotel-available'] == false %}
+                                                    {{ 'close' }}
+                                                {% endif %}
+                                            {% endfor %}
+                                        </td>
+                                    {% endfor %}
+                                </tr>
+{#///////////////// Suite /////////////////////////////////#}
+                                <tr>
+                                    <td>Suite</td>
+                                    {% for season in data %}
+                                        <td>
+                                            {% for room in season['rooms'] %}
+                                                {% if room['type'] == 7 and season['hotel-available'] == true %}
+                                                    {{ room['price'] }}
+                                                {% elseif room['type'] == 7 and season['hotel-available'] == false %}
+                                                    {{ 'close' }}
+                                                {% endif %}
+                                            {% endfor %}
+                                        </td>
+                                    {% endfor %}
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    {#<form action="" method="POST">#}
+                        {#<div class="input-append date" id="dp3" data-date-format="dd/mm/yyyy">#}
+                            {#{{ form_widget(form.checkin) }}#}
+                            {#<span class="add-on"><i class="icon-th"></i></span>#}
+                            {#{{ form_widget(form.checkout) }}#}
+                            {#<span class="add-on"><i class="icon-th"></i></span>#}
+                            {#{{ form_widget(form.nights) }}#}
+                            {#<input id="idHotel" name="idHotel" type="hidden" value="{{ hotel.id }}" />#}
+                        {#</div>#}
+
+                        {#{% for season in data %}#}
+                        {#{% endfor %}#}
+                    {#</form>#}
+
+
+
+
+                    {#<input type="text" class="datepicker" value="" class="span2">#}
+                    {#<input type="text" class="datepicker" value="" class="span2">#}
+
+                    {#<input type="text" id="text" />#}
+                    {#<div id="mydiv"></div>#}
+
+                    {#{% render(controller('KvartiriBundle:Selection:selectRoom')) %}#}
+
+
+                    {#<form action="{{ path('selectRoom', {'id': room.id}) }}" method="post">#}
+                        {#<select name="qte" class="span2">#}
+                            {#{% for room in hotel.rooms %}#}
+                                    {#<option value="{{ room.id }}">{% include 'KvartiriBundle:Default:rooms/details/roomType.html.twig' %}</option>#}
+                            {#{% endfor %}#}
+                        {#</select>#}
+
+                        {#<div>#}
+                            {#<button class="btn btn-primary">save</button>#}
+                        {#</div>#}
+                    {#</form>#}
+
+
+            </div>
+            <form action="{{ path('addFavoriteHotel', { 'id' : hotel.id }) }}" method="get">
+                <select name="roomId" class="span2">
+                    {#{% for i in 1..10 %}#}
+                    {#<option value="{{ i }}">{{ i }}</option>#}
+                    {#{% endfor %}#}
+                    {% for room in hotelRooms %}
+                        <option value="{{ room['id'] }}">{% include 'KvartiriBundle:Default:hotels/details/roomType.html.twig' %}</option>
+                    {% endfor %}
+                </select>
+                <div>
+                    <button class="btn btn-primary">Add to favorite hotels</button>
+                </div>
+            </form>
+
+            <form action="{{ path('hotel_client_request', { 'hotelId' : hotel.id }) }}" method="post">
+                <input id="hotelId" name="hotelId" type="hidden" value="{{ hotel.id }}" />
+                <div>
+                    <button class="btn btn-primary">Make Request</button>
+                </div>
+            </form>
+        </div>
+        </div>
+    </div>
+{% endblock %}

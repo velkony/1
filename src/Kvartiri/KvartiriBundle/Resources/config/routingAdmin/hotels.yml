@@ -1,0 +1,30 @@
+hotelsAdminAddHotel:
+    path:     /
+    defaults: { _controller: "KvartiriBundle:HotelsAdmin:index" }
+
+hotelsAdminAddHotel_show:
+    path:     /{id}/show
+    defaults: { _controller: "KvartiriBundle:HotelsAdmin:show" }
+
+hotelsAdminAddHotel_new:
+    path:     /new
+    defaults: { _controller: "KvartiriBundle:HotelsAdmin:new" }
+
+hotelsAdminAddHotel_create:
+    path:     /create
+    defaults: { _controller: "KvartiriBundle:HotelsAdmin:create" }
+    methods:  POST
+
+hotelsAdminAddHotel_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "KvartiriBundle:HotelsAdmin:edit" }
+
+hotelsAdminAddHotel_update:
+    path:     /{id}/update
+    defaults: { _controller: "KvartiriBundle:HotelsAdmin:update" }
+    methods:  [POST, PUT]
+
+hotelsAdminAddHotel_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "KvartiriBundle:HotelsAdmin:delete" }
+    methods:  [POST, DELETE]

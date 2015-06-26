@@ -1,0 +1,53 @@
+{% extends "::layout/layoutAdmin.html.twig" %}
+
+{% block body -%}
+    <h1>Hotels</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ entity.name }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ entity.description }}</td>
+            </tr>
+            <tr>
+                <th>Remarks</th>
+                <td>{{ entity.remarks }}</td>
+            </tr>
+            <tr>
+                <th>Hoteltype</th>
+                <td>{{ entity.hotelType }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+            <li>
+                <a href="{{ path('adminRooms', { 'hotelId': entity.id }) }}">
+                {#<a href="{{ path('adminRooms') }}">#}
+                    Add Rooms
+                </a>
+                <a href="{{ path('adminPromotions', { 'hotelId': entity.id }) }}">
+                    Add Promotions
+                </a>
+            </li>
+            <li>
+                <a href="{{ path('hotelsAdminAddHotel') }}">
+                    Back to the list
+                </a>
+            </li>
+            <li>
+                <a href="{{ path('hotelsAdminAddHotel_edit', { 'id': entity.id }) }}">
+                    Edit
+                </a>
+            </li>
+            <li>{{ form(delete_form) }}</li>
+        </ul>
+{% endblock %}

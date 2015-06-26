@@ -1,0 +1,119 @@
+<?php
+
+namespace Kvartiri\KvartiriBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Seasons
+ *
+ * @ORM\Table("seasons")
+ * @ORM\Entity(repositoryClass="Kvartiri\KvartiriBundle\Repository\SeasonsRepository")
+ */
+class Seasons
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    public function __construct()
+    {
+        $this->roomSeasons = new \Doctrine\Common\Collections\ArrayCollection();
+
+//        $dt = new \DateTime();
+//        $this->expiration = $dt;
+    }
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Kvartiri\KvartiriBundle\Entity\Hotels", inversedBy="seasons", cascade={"persist", "remove"})
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $hotel;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="Kvartiri\KvartiriBundle\Entity\RoomSeasons", inversedBy="seasons", cascade={"persist", "remove"})
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $roomSeasons;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="start", type="datetime")
+     */
+    private $start;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="finish", type="datetime")
+     */
+    private $finish;
+
+
+
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set start
+     *
+     * @param \DateTime $start
+     * @return Seasons
+     */
+    public function setStart($start)
+    {
+        $this->start = $start;
+
+        return $this;
+    }
+
+    /**
+     * Get start
+     *
+     * @return \DateTime 
+     */
+    public function getStart()
+    {
+        return $this->start;
+    }
+
+    /**
+     * Set finish
+     *
+     * @param \DateTime $finish
+     * @return Seasons
+     */
+    public function setFinish($finish)
+    {
+        $this->finish = $finish;
+
+        return $this;
+    }
+
+    /**
+     * Get finish
+     *
+     * @return \DateTime 
+     */
+    public function getFinish()
+    {
+        return $this->finish;
+    }
+
+
+
+}

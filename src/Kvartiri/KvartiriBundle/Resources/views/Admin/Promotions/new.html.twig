@@ -1,0 +1,70 @@
+{% extends "::layout/layoutAdmin.html.twig" %}
+
+{% block body -%}
+    <h1>Promotions creation</h1>
+
+
+    {#{{ form(form) }}#}
+
+    <form action="{{path('adminPromotions_create', { 'hotelId': hotelId })}}" method="POST">
+
+        {{ form_label( form.hotel) }}
+        {{ form_widget( form.hotel) }}
+        {{ form_errors( form.hotel) }}
+
+        {{ form_label( form.promotionEarlyBooking) }}
+        {{ form_widget( form.promotionEarlyBooking) }}
+        {{ form_errors( form.promotionEarlyBooking) }}
+
+        {{ form_label( form.promotionFixedDates) }}
+        {{ form_widget( form.promotionFixedDates) }}
+        {{ form_errors( form.promotionFixedDates) }}
+
+        {{ form_label( form.promotionGroup) }}
+        {{ form_widget( form.promotionGroup) }}
+        {{ form_errors( form.promotionGroup) }}
+
+        {{ form_label( form.promotionMoreNights) }}
+        {{ form_widget( form.promotionMoreNights) }}
+        {{ form_errors( form.promotionMoreNights) }}
+
+        {{ form_label( form.promotionPeriod) }}
+        {{ form_widget( form.promotionPeriod) }}
+        {{ form_errors( form.promotionPeriod) }}
+
+        {{ form_label( form.reductionChildren) }}
+        {{ form_widget( form.reductionChildren) }}
+        {{ form_errors( form.reductionChildren) }}
+
+        {{form_rest(form)}}
+
+    </form>
+
+
+
+
+
+
+
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('adminPromotions', { 'hotelId': hotelId }) }}">
+            Back to the list
+        </a>
+    </li>
+</ul>
+{% endblock %}
+
+{% block javascripts %}
+
+    <script src="{{ asset('js/promotionEarlyBookingForm.js') }}"></script>
+    <script src="{{ asset('js/promotionFixedDatesForm.js') }}"></script>
+    <script src="{{ asset('js/promotionGroupForm.js') }}"></script>
+    <script src="{{ asset('js/promotionMoreNightsForm.js') }}"></script>
+    <script src="{{ asset('js/promotionPeriodForm.js') }}"></script>
+    <script src="{{ asset('js/reductionChildrenForm.js') }}"></script>
+    <script src="{{ asset('js/calendarPromotionPeriod.js') }}"></script>
+    <script src="{{ asset('js/calendarPromotionFixedDates.js') }}"></script>
+
+{% endblock %}

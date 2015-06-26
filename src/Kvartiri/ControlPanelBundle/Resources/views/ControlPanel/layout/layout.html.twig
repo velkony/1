@@ -1,0 +1,43 @@
+{% extends "::layout/layoutAdmin.html.twig" %}
+
+
+{% block body %}
+<div class="container">
+
+    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+        {% include 'KvartiriControlPanelBundle:ControlPanel:menu/controlPanel.html.twig' %}
+    {% else %}
+        {#{% include 'UsersBundle:Default:modulesUsed/users.html.twig' %}#}
+    {% endif %}
+
+    <div class="row">
+
+        <div class="span3">
+            {#{% include '::modulesUsed/navigation.html.twig' %}#}
+            {#{% render(controller('KvartiriBundle:Selection:menu')) %}#}
+
+            {#{% if is_granted('IS_AUTHENTICATED_FULLY') %}#}
+
+                {#{% include 'UsersBundle:Default:modulesUsed/usersConnect.html.twig' %}#}
+
+                {#ControlPanelBundle:ControlPanel:layout/layout.html.twig#}
+                {#{% include 'UsersBundle:Default:modulesUsed/mySelection.html.twig' %}#}
+            {#{% else %}#}
+                {#{% include 'UsersBundle:Default:modulesUsed/users.html.twig' %}#}
+            {#{% endif %}#}
+            {#{% render(controller('KvartiriBundle:Hotels:getCities')) %}#}
+
+            {#{% include '::modulesUsed/filters.html.twig' %}#}
+        </div>
+        
+        <div class="span9">
+
+            <ul class="thumbnails">
+
+
+
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

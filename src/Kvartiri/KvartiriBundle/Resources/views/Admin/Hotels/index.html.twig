@@ -1,0 +1,60 @@
+{% extends "::layout/layoutAdmin.html.twig" %}
+
+{% block body -%}
+    <h1>Hotels list</h1>
+
+
+    <div>
+        <a href="{{ path('hotelsAdminAddHotel_new') }}">
+            Create a new hotel
+        </a>
+    </div>
+
+
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Available</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Remarks</th>
+                <th>Hoteltype</th>
+                <th>Add Room</th>
+                <th>Add Promotions & Price reduction</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('hotelsAdminAddHotel_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+
+                {% if entity.available == 1 %}
+                <td>{{ 'yes' }}</td>
+                {% elseif entity.available == 0 %}
+                <td>{{ 'no' }}</td>
+                {% endif %}
+
+                <td>{{ entity.name }}</td>
+                <td>{{ entity.description }}</td>
+                <td>{{ entity.remarks }}</td>
+                <td>{{ entity.hotelType }}</td>
+                <td><a href="{{ path('adminRooms', { 'hotelId': entity.id }) }}">
+                        Add Rooms
+                    </a>
+                </td><td><a href="{{ path('adminPromotions', { 'hotelId': entity.id }) }}">
+                        Add Promotions
+                    </a>
+                </td>
+                <td>
+                    <a href="{{ path('hotelsAdminAddHotel_show', { 'id': entity.id }) }}"><i class="icon-book"></i></a>
+                    <a href="{{ path('hotelsAdminAddHotel_edit', { 'id': entity.id }) }}"><i class="icon-edit"></i></a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+    {% endblock %}

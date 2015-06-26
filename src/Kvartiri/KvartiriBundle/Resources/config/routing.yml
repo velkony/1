@@ -1,0 +1,77 @@
+kvartiri_promotions:
+    resource: "@KvartiriBundle/Resources/config/routingAdmin/promotions.yml"
+    prefix:   /promotions
+
+kvartiri_adminRooms:
+    resource: "@KvartiriBundle/Resources/config/routingAdmin/rooms.yml"
+    prefix:   /add/room
+
+kvartiri_adminRegions:
+    resource: "@KvartiriBundle/Resources/config/routingAdmin/regions.yml"
+    prefix:   /add/region
+
+kvartiri_adminCities:
+    resource: "@KvartiriBundle/Resources/config/routingAdmin/cities.yml"
+    prefix:   /add/city
+
+kvartiri_adminHotels:
+    resource: "@KvartiriBundle/Resources/config/routingAdmin/hotels.yml"
+    prefix:   /add/hotel
+
+hotels:
+    path:     /
+    defaults: { _controller: KvartiriBundle:Hotels:hotels }
+
+presentation:
+    path:     /hotels
+    defaults: { _controller: KvartiriBundle:Hotels:presentation }
+
+presentationHotel:
+    path:     /hotel/by/id/{id}
+    defaults: { _controller: KvartiriBundle:Hotels:presentationHotel }
+
+selection:
+    path:     /selection
+    defaults: { _controller: KvartiriBundle:Selection:selection }
+
+booking:
+    path:     /selection/booking
+    defaults: { _controller: KvartiriBundle:Selection:booking }
+
+validation:
+    path:     /selection/booking/validation
+    defaults: { _controller: KvartiriBundle:Selection:validation }
+
+regionCities:
+    path:     /regions
+    defaults: { _controller: KvartiriBundle:Navigation:menu }
+    options:
+        expose: true
+
+cityHotels:
+    path:     /city/{id}
+    defaults: { _controller: KvartiriBundle:Navigation:cityHotels }
+
+searchHotel:
+    path:     /search/hotels
+    defaults: { _controller: KvartiriBundle:Hotels:searchTreatment }
+
+season:
+    path:     /season/{period}
+    defaults: { _controller: KvartiriBundle:Hotels:findSeason }
+
+addFavoriteHotel:
+    pattern:  /favorite/hotel/{id}
+    defaults: { _controller: KvartiriBundle:Selection:addFavoriteHotel }
+
+removeFavoriteHotel:
+    pattern:  /remove/favorite/hotel/{id}
+    defaults: { _controller: KvartiriBundle:Selection:removeFavoriteHotel }
+
+favoriteHotels:
+    pattern:  /favorite/hotels
+    defaults: { _controller: KvartiriBundle:Selection:favoriteHotels }
+
+post:
+    resource: "@KvartiriBundle/Controller/HotelsAdminController.php"
+    type:     annotation

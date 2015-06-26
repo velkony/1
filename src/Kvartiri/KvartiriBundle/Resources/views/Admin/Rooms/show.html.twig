@@ -1,0 +1,102 @@
+{% extends "::layout/layoutAdmin.html.twig" %}
+
+{% block body -%}
+    <h1>Rooms</h1>
+
+    <table class="record_properties">
+        <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ entity.id }}</td>
+        </tr>
+        <tr>
+            <th>Roomtype</th>
+            <td>{{ entity.roomType }}</td>
+        </tr>
+        <tr>
+            <th>Guestsmax</th>
+            <td>{{ entity.guestsMax }}</td>
+        </tr>
+        <tr>
+            <th>Extrabed</th>
+            <td>{{ entity.extraBed }}</td>
+        </tr>
+        <tr>
+            <th>Price</th>
+            <td>
+                {% for item in entity.roomseasons%}
+                    {% for items in item.hotelseasons %}
+
+                        {{ items.name }} -->             debut:    {{ items.start |date('d-m-Y') }}  ----> fin : {{ items.finish |date('d-m-Y') }}
+
+                    {% endfor%}
+
+                    {{ item.price }} €
+                    <br>
+                {% endfor%}
+            </td>
+        </tr>
+
+        </tbody>
+    </table>
+
+    {#{{ hotelId }}#}
+
+    <ul class="record_actions">
+        <li>
+            {#<a href="{{ path('adminRooms') }}">#}
+            <a href="{{ path('adminRooms', { 'hotelId': hotelId }) }}">
+                Back to the list
+            </a>
+        </li>
+        <li>
+            <a href="{{ path('adminRooms_edit', { 'id': entity.id, 'hotelId': hotelId }) }}">
+                Edit
+            </a>
+        </li>
+        <li>{{ form(delete_form) }}</li>
+    </ul>
+{% endblock %}
+
+
+
+
+
+{#{% block body -%}#}
+    {#<h1>Rooms</h1>#}
+
+    {#<table class="record_properties">#}
+        {#<tbody>#}
+            {#<tr>#}
+                {#<th>Id</th>#}
+                {#<td>{{ entity.id }}</td>#}
+            {#</tr>#}
+            {#<tr>#}
+                {#<th>Roomtype</th>#}
+                {#<td>{{ entity.roomType }}</td>#}
+            {#</tr>#}
+            {#<tr>#}
+                {#<th>Guestsmax</th>#}
+                {#<td>{{ entity.guestsMax }}</td>#}
+            {#</tr>#}
+            {#<tr>#}
+                {#<th>Extrabed</th>#}
+                {#<td>{{ entity.extraBed }}</td>#}
+            {#</tr>#}
+        {#</tbody>#}
+    {#</table>#}
+
+        {#<ul class="record_actions">#}
+    {#<li>#}
+        {#<a href="{{ path('adminRooms') }}">#}
+            {#Back to the list#}
+        {#</a>#}
+    {#</li>#}
+    {#<li>#}
+        {#<a href="{{ path('adminRooms_edit', { 'id': entity.id }) }}">#}
+            {#Edit#}
+        {#</a>#}
+    {#</li>#}
+    {#<li>{{ form(delete_form) }}</li>#}
+{#</ul>#}
+{#{% endblock %}#}

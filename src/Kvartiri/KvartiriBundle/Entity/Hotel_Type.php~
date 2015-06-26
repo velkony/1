@@ -1,0 +1,67 @@
+<?php
+
+namespace Kvartiri\KvartiriBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Hotel_Type
+ *
+ * @ORM\Table()
+ * @ORM\Entity(repositoryClass="Kvartiri\KvartiriBundle\Entity\Hotel_TypeRepository")
+ */
+class Hotel_Type
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="hotel", type="boolean")
+     */
+    private $hotel;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="hostel", type="boolean")
+     */
+    private $hostel;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="guesthouse", type="boolean")
+     */
+    private $guesthouse;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="studio", type="boolean")
+     */
+    private $studio;
+
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="apartment", type="boolean")
+     */
+    private $apartment;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="single_room", type="boolean")
+     */
+    private $singleRoom;
+    
+}

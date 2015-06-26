@@ -1,0 +1,122 @@
+{% extends "::layout/layout.html.twig" %}
+
+
+{% block body %}
+<div class="container">
+    <div class="row">
+
+        <div class="span3">
+            {% include '::modulesUsed/navigation.html.twig' %}
+            {% render(controller('KvartiriBundle:Selection:menu')) %}
+            {#{% include 'UsersBundle:Default:modulesUsed/users.html.twig' %}#}
+            {#{% render(controller('KvartiriBundle:Hotels:getCities')) %}#}
+
+
+            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                {% include 'UsersBundle:Default:modulesUsed/usersConnect.html.twig' %}
+                {#{% include 'UsersBundle:Default:modulesUsed/mySelection.html.twig' %}#}
+            {% else %}
+                {% include 'UsersBundle:Default:modulesUsed/users.html.twig' %}
+            {% endif %}
+            {#{% render(controller('KvartiriBundle:Hotels:getCities')) %}#}
+            {#{% include '::modulesUsed/controlPanel.html.twig' %}#}
+
+        </div>
+        
+        <div class="span9">
+
+            {#{{ dump(data) }}#}
+            {#{{ dump(data[0]['hotel-season-now']['season-low-price-room']['room-price']) }}#}
+
+            <ul class="thumbnails">
+                {% for hotel in data %}
+                    {#{% set lowRoomPrice = hotel['low-price-room'] %}#}
+
+                    {#{% set reduction = hotel['hotel-season-now']['season-reduction'] %}#}
+                    <li class="span3">
+                        <div class="thumbnail">
+
+                            <a href="{{ path('presentationHotel', {'id' : hotel['hotel-id']}) }}">
+                                <div class="imageAndText">
+                                    {#{{ dump(hotel['images'][0]['images']) }}#}
+                                {% if hotel['images'] %}
+                                    <img src="{{ asset(hotel['images'][0]['image']) }}" alt="{{ hotel['images'][0]['image-alt'] }}" class="img-rounded" style="width:300px;height:224px; outline: 1px solid orange">
+                                {% endif %}
+                                    {#{% if lowRoomPrice %}#}
+                                        {#<div class="col">#}
+                                            {#<div class="col-sm-4">#}
+                                                {#{{'From '~lowRoomPrice~' €'}}#}
+                                            {#</div>#}
+                                        {#</div>#}
+                                    {#{% endif %}#}
+
+                                </div>
+                            </a>
+
+                            <div class="caption">
+                                <h5>{{ hotel['hotel-name'] }}</h5>
+                                <h6>{% include 'KvartiriBundle:Default:hotels/details/typeAllHotels.html.twig' %}</h6>
+
+                                {#{% if reduction %}#}
+                                    {#<p><s>{{ roomPrice}} €</s>#}
+                                        {#New Price: <mark>{{ roomPrice|percent(reduction)}} €</mark></p>#}
+                                {#{% else %}#}
+                                    {#<p>{{ lowRoomPrice}} €</p>#}
+                                {#{% endif %}#}
+
+                                {#<a class="btn btn-primary" href="{{ path('presentationHotel', {'id' : hotel['hotel-id']}) }}">More informations</a>#}
+                                {#<a class="btn btn-success" href="{{ path('selection') }}">Selection</a>#}
+                            </div>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            {#<ul class="thumbnails">#}
+               {#{% for hotel in hotels %}#}
+                {#<li class="span3">#}
+                    {#<div class="thumbnail">#}
+                        {#{% for image in hotel.images %}#}
+                            {#{% if loop.first %}#}
+                                {#<a href="{{ path('presentationHotel', {'id' : hotel.id}) }}">#}
+                                    {#<img src="{{ image.pathIamgeSmall }}" alt="Greek Hotels" width="300" height="300">#}
+                                {#</a>#}
+                            {#{% endif %}#}
+                        {#{% endfor %}#}
+                        {#<div class="caption">#}
+                            {#<h4>{{ hotel.name }}</h4>#}
+                            {#<h5>{% include 'KvartiriBundle:Default:hotels/details/typeHotels.html.twig' %}</h5>#}
+
+
+                            {#<p>100,00 €</p>#}
+                            {#<a class="btn btn-primary" href="{{ path('presentationHotel', {'id' : hotel.id}) }}">More informations</a>#}
+                            {#<a class="btn btn-success" href="{{ path('selection') }}">Selection</a>#}
+                        {#</div>#}
+                    {#</div>#}
+                {#</li>#}
+                {#{% endfor %}#}
+            {#</ul>#}
+
+            {# display navigation #}
+            <div class="navigation">
+                {{ knp_pagination_render(hotels) }}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,53 @@
+{#{% for treeLine in treeLines %}#}
+{#<li>#}
+    {#<a href="{{ path('regionCities', {'region' : treeLine.position}) }}">{{ treeLine.name }}</a>#}
+    {#<a href="">{{ treeLine.__children.title }}</a>#}
+{#</li>#}
+
+{#{% endfor %}#}
+
+{{ dump(treeLines) }}
+
+
+{#<ul>#}
+    {#{% for treeLine in treeLines %}#}
+        {#{{ _self.display_tree(treeLine) }}#}
+    {#{% endfor %}#}
+{#</ul>#}
+
+{#{% macro display_tree(level) %}#}
+    {#&#123;&#35;{{ dump(level.name) }}&#35;&#125;#}
+
+    {#<li>{{ level.name }}#}
+        {#{% if level.cities|default() %}#}
+            {#<ul>#}
+                {#{% for child in level.cities %}#}
+                    {#{{ child.name }}#}
+                {#{% endfor %}#}
+            {#</ul>#}
+        {#{% endif %}#}
+    {#</li>#}
+{#{% endmacro %}#}
+
+{#<div id="tree1"></div>#}
+
+
+{#<ul>#}
+    {#{% for treeLine in treeLines %}#}
+        {#{{ _self.display_tree(treeLine) }}#}
+    {#{% endfor %}#}
+{#</ul>#}
+
+{#{% macro display_tree(level) %}#}
+    {#<li>{{ level.title }}#}
+        {#{% if level.__children|default() %}#}
+            {#<ul>#}
+                {#{% for child in level.__children %}#}
+                    {#{{ _self.display_tree(child) }}#}
+                {#{% endfor %}#}
+            {#</ul>#}
+        {#{% endif %}#}
+    {#</li>#}
+{#{% endmacro %}#}
+
+{#<div id="tree1"></div>#}

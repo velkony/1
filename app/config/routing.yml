@@ -1,0 +1,69 @@
+kvartiri_control_panel:
+    resource: "@KvartiriControlPanelBundle/Resources/config/routing.yml"
+    prefix:   /
+
+pages:
+    resource: "@PagesBundle/Resources/config/routing.yml"
+    prefix:   /
+
+kvartiri:
+    resource: "@KvartiriBundle/Resources/config/routing.yml"
+    prefix:   /
+
+users:
+    resource: "@UsersBundle/Resources/config/routing.yml"
+    prefix:   /
+
+users2:
+    resource: "@UsersBundle/Controller/"
+    type : annotation
+    prefix:   /
+fos_js_routing:
+    resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"
+
+
+hwi_oauth_security:
+    resource: "@HWIOAuthBundle/Resources/config/routing/login.xml"
+    prefix: /login
+
+hwi_oauth_connect:
+    resource: "@HWIOAuthBundle/Resources/config/routing/connect.xml"
+    prefix: /login
+
+hwi_oauth_redirect:
+    resource: "@HWIOAuthBundle/Resources/config/routing/redirect.xml"
+    prefix:   /login
+
+facebook_login:
+    pattern: /login/check-facebook
+
+
+
+
+
+
+#hwi_oauth_redirect:
+#    resource: "@HWIOAuthBundle/Resources/config/routing/redirect.xml"
+#    prefix:   /secure_area/connect
+#
+#hwi_oauth_login:
+#    resource: "@HWIOAuthBundle/Resources/config/routing/login.xml"
+#    prefix:   /secure_area/connect
+#
+#hwi_oauth_connect:
+#    resource: "@HWIOAuthBundle/Resources/config/routing/connect.xml"
+#    prefix:   /secure_area/connect
+#
+#hwi_github_login:
+#    pattern: /secure_area/login/check-github
+
+
+
+
+
+#hwi_oauth_redirect:
+#    resource: "@HWIOAuthBundle/Resources/config/routing/redirect.xml"
+#    prefix:   /connect
+#
+#facebook_login:
+#    pattern: /login/check-facebook

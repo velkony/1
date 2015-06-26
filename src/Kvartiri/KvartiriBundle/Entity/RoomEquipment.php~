@@ -1,0 +1,106 @@
+<?php
+
+namespace Kvartiri\KvartiriBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * RoomEquipment
+ *
+ * @ORM\Table("room_equipment")
+ * @ORM\Entity(repositoryClass="Kvartiri\KvartiriBundle\Repository\RoomEquipmentRepository")
+ */
+class RoomEquipment
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="air_conditioning", type="boolean")
+     */
+    private $airConditioning;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="TV", type="boolean")
+     */
+    private $tV;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="internet", type="boolean")
+     */
+    private $internet;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="kitchenette", type="boolean")
+     */
+    private $kitchenette;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="refrigerator", type="boolean")
+     */
+    private $refrigerator;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="terrace", type="boolean")
+     */
+    private $terrace;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="sea_view", type="boolean")
+     */
+    private $seaView;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="private_bathroom", type="boolean")
+     */
+    private $privateBathroom;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="breakfast", type="boolean")
+     */
+    private $breakfast;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="lunch", type="boolean")
+     */
+    private $lunch;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="dinner", type="boolean")
+     */
+    private $dinner;
+
+    /**
+     * @ORM\OneToOne(targetEntity="Kvartiri\KvartiriBundle\Entity\Rooms", inversedBy="roomEquipment")
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $room;
+}

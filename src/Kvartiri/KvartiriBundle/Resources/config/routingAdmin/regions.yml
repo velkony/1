@@ -1,0 +1,30 @@
+adminRegions:
+    path:     /
+    defaults: { _controller: "KvartiriBundle:RegionsAdmin:index" }
+
+adminRegions_show:
+    path:     /{id}/show
+    defaults: { _controller: "KvartiriBundle:RegionsAdmin:show" }
+
+adminRegions_new:
+    path:     /new
+    defaults: { _controller: "KvartiriBundle:RegionsAdmin:new" }
+
+adminRegions_create:
+    path:     /create
+    defaults: { _controller: "KvartiriBundle:RegionsAdmin:create" }
+    methods:  POST
+
+adminRegions_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "KvartiriBundle:RegionsAdmin:edit" }
+
+adminRegions_update:
+    path:     /{id}/update
+    defaults: { _controller: "KvartiriBundle:RegionsAdmin:update" }
+    methods:  [POST, PUT]
+
+adminRegions_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "KvartiriBundle:RegionsAdmin:delete" }
+    methods:  [POST, DELETE]

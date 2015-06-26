@@ -1,0 +1,37 @@
+<?php
+
+namespace Kvartiri\KvartiriBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * RoomType
+ *
+ * @ORM\Table("room_type")
+ * @ORM\Entity(repositoryClass="Kvartiri\KvartiriBundle\Repository\RoomTypeRepository")
+ */
+class RoomType
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="type", type="string", length=125)
+     */
+    private $type;
+
+    /**
+     * @ORM\OneToOne(targetEntity="Kvartiri\KvartiriBundle\Entity\Rooms", inversedBy="roomType")
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $room;
+
+}

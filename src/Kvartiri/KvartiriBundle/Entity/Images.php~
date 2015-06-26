@@ -1,0 +1,153 @@
+<?php
+
+namespace Kvartiri\KvartiriBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Images
+ *
+ * @ORM\Table("images")
+ * @ORM\Entity(repositoryClass="Kvartiri\KvartiriBundle\Repository\ImagesRepository")
+ */
+class Images
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="path_iamge_hight", type="string", length=255)
+     */
+    private $pathIamgeHight;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="path_iamge_small", type="string", length=255)
+     */
+    private $pathIamgeSmall;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="alt", type="string", length=255)
+     */
+    private $alt;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Kvartiri\KvartiriBundle\Entity\Hotels", inversedBy="images", cascade={"persist", "remove"})
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $hotel;
+
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set pathIamgeHight
+     *
+     * @param string $pathIamgeHight
+     * @return Images
+     */
+    public function setPathIamgeHight($pathIamgeHight)
+    {
+        $this->pathIamgeHight = $pathIamgeHight;
+
+        return $this;
+    }
+
+    /**
+     * Get pathIamgeHight
+     *
+     * @return string 
+     */
+    public function getPathIamgeHight()
+    {
+        return $this->pathIamgeHight;
+    }
+
+    /**
+     * Set pathIamgeSmall
+     *
+     * @param string $pathIamgeSmall
+     * @return Images
+     */
+    public function setPathIamgeSmall($pathIamgeSmall)
+    {
+        $this->pathIamgeSmall = $pathIamgeSmall;
+
+        return $this;
+    }
+
+    /**
+     * Get pathIamgeSmall
+     *
+     * @return string 
+     */
+    public function getPathIamgeSmall()
+    {
+        return $this->pathIamgeSmall;
+    }
+
+    /**
+     * Set alt
+     *
+     * @param string $alt
+     * @return Images
+     */
+    public function setAlt($alt)
+    {
+        $this->alt = $alt;
+
+        return $this;
+    }
+
+    /**
+     * Get alt
+     *
+     * @return string 
+     */
+    public function getAlt()
+    {
+        return $this->alt;
+    }
+
+    /**
+     * Set hotel
+     *
+     * @param \Kvartiri\KvartiriBundle\Entity\Hotels $hotel
+     * @return Images
+     */
+    public function setHotel(\Kvartiri\KvartiriBundle\Entity\Hotels $hotel = null)
+    {
+        $this->hotel = $hotel;
+
+        return $this;
+    }
+
+    /**
+     * Get hotel
+     *
+     * @return \Kvartiri\KvartiriBundle\Entity\Hotels 
+     */
+    public function getHotel()
+    {
+        return $this->hotel;
+    }
+}

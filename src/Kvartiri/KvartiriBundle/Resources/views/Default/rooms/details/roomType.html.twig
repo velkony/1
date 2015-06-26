@@ -1,0 +1,15 @@
+{% if room.roomType == 1 %}
+    {{ 'Single Room' }}
+{% elseif room.roomType == 2 %}
+    {{ 'Double Room' }}
+{% elseif room.roomType == 3 %}
+    {{ 'Triple Room' }}
+{% elseif room.roomType == 4 %}
+    {{ 'Quadruple Room' }}
+{% elseif room.roomType ==5  %}
+    {{ 'Apartment' }}
+{% elseif room.roomType == 6 %}
+    {{ 'Studio' }}
+{% elseif room.roomType == 7 %}
+    {{ 'Suite' }}
+{% endif %}

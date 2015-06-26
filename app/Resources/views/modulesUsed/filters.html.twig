@@ -1,0 +1,143 @@
+<div class="well">
+    <ul class="nav nav-list">
+
+        <li class="nav-header">Filters</li>
+        <!--accordions start-->
+        <div class="panel-group">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h5 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                            City
+                        </a>
+                    </h5>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse in">
+                    <div class="panel-body">
+
+                        {% for city in cities %}
+
+                            <div class="checkbox form-btm-link">
+                                <label><input type="checkbox"> {{ city.name }} </label>
+                            </div>
+
+                        {% endfor %}
+
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h5 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                            Period
+                        </a>
+                    </h5>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse">
+                    <div class="panel-body">
+
+                        <div class="input-append date" id="dp3" data-date-format="dd/mm/yyyy">
+                            <input type="text" id="kvartiri_kvartiribundle_selectroom_checkin" name="kvartiri_kvartiribundle_selectroom[checkin]" required="required" class="dpd1 span2" data-date-format="dd/mm/yyyy">
+                            <br>
+                            <input type="text" id="kvartiri_kvartiribundle_selectroom_checkout" name="kvartiri_kvartiribundle_selectroom[checkout]" required="required" class="dpd2 span2" data-date-format="dd/mm/yyyy">
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h5 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                            Accomodation Type
+                        </a>
+                    </h5>
+                </div>
+                <div id="collapseThree" class="panel-collapse collapse">
+                    <div class="panel-body">
+
+                        <div class="checkbox form-btm-link">
+                            <label><input type="checkbox"> All </label>
+                        </div>
+                        <div class="checkbox form-btm-link">
+                            <label><input type="checkbox"> Hotel </label>
+                        </div>
+                        <div class="checkbox form-btm-link">
+                            <label><input type="checkbox"> Resort </label>
+                        </div>
+                        <div class="checkbox form-btm-link">
+                            <label><input type="checkbox"> Residence </label>
+                        </div>
+                        <div class="checkbox form-btm-link">
+                            <label><input type="checkbox"> Guest House </label>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h5 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+                            Room Equipment
+                        </a>
+                    </h5>
+                </div>
+                <div id="collapseFour" class="panel-collapse collapse">
+                    <div class="panel-body">
+
+                        <div class="checkbox form-btm-link">
+                            <label><input type="checkbox"> Breakfast </label>
+                        </div>
+                        <div class="checkbox form-btm-link">
+                            <label><input type="checkbox"> Air Conditioning </label>
+                        </div>
+                        <div class="checkbox form-btm-link">
+                            <label><input type="checkbox"> Wi-fi </label>
+                        </div>
+                        <div class="checkbox form-btm-link">
+                            <label><input type="checkbox"> Room Service </label>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h5 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive">
+                            Hotel Service
+                        </a>
+                    </h5>
+                </div>
+                <div id="collapseFive" class="panel-collapse collapse">
+                    <div class="panel-body">
+
+                        <div class="checkbox form-btm-link">
+                            <label><input type="checkbox"> Parking </label>
+                        </div>
+                        <div class="checkbox form-btm-link">
+                            <label><input type="checkbox"> Restaurant </label>
+                        </div>
+                        <div class="checkbox form-btm-link">
+                            <label><input type="checkbox"> Barbecue </label>
+                        </div>
+                        <div class="checkbox form-btm-link">
+                            <label><input type="checkbox"> Fitness </label>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div> <!--accordions end--><br>
+    </ul>
+</div>
+
+
+
+

@@ -1,0 +1,9 @@
+{% block information %}
+    {% for page in pages %}
+        <li><a href="{{ path('page', { 'title' : page.title }) }}">{{ page.title }}</a>
+    {% endfor %}
+{% endblock %}
+
+
+
+

@@ -1,0 +1,50 @@
+<?php
+
+namespace Kvartiri\KvartiriBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Cities
+ *
+ * @ORM\Table("cities")
+ * @ORM\Entity(repositoryClass="Kvartiri\KvartiriBundle\Repository\CitiesRepository")
+ */
+class Cities
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    public function __construct()
+    {
+        $this->hotels = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=125)
+     */
+    private $name;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Kvartiri\KvartiriBundle\Entity\Regions", inversedBy="cities")
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $region;
+
+
+    /**
+     * @ORM\OneToMany(targetEntity="Kvartiri\KvartiriBundle\Entity\Hotels", mappedBy="city", cascade={"persist", "remove"})
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $hotels;
+
+
+}

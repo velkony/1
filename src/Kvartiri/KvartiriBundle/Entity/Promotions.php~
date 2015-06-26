@@ -1,0 +1,114 @@
+<?php
+
+namespace Kvartiri\KvartiriBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Rooms
+ *
+ * @ORM\Table("promotions")
+ * @ORM\Entity(repositoryClass="Kvartiri\KvartiriBundle\Repository\PromotionsRepository")
+ */
+class Promotions
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Kvartiri\KvartiriBundle\Entity\Hotels", inversedBy="promotions", cascade={"persist"})
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $hotel;
+
+
+    /**
+     * @ORM\ManyToMany(targetEntity="Kvartiri\KvartiriBundle\Entity\PromotionEarlyBooking", cascade={"persist", "remove"})
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $promotionEarlyBooking;
+
+
+    /**
+     * @ORM\ManyToMany(targetEntity="Kvartiri\KvartiriBundle\Entity\PromotionFixedDates", cascade={"persist", "remove"})
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $promotionFixedDates;
+
+
+    /**
+     * @ORM\ManyToMany(targetEntity="Kvartiri\KvartiriBundle\Entity\PromotionGroup", cascade={"persist", "remove"})
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $promotionGroup;
+
+
+    /**
+     * @ORM\ManyToMany(targetEntity="Kvartiri\KvartiriBundle\Entity\PromotionMoreNights", cascade={"persist", "remove"})
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $promotionMoreNights;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="Kvartiri\KvartiriBundle\Entity\PromotionPeriod", cascade={"persist", "remove"})
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $promotionPeriod;
+
+
+    /**
+     * @ORM\ManyToMany(targetEntity="Kvartiri\KvartiriBundle\Entity\ReductionChildren", cascade={"persist", "remove"})
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $reductionChildren;
+
+
+
+
+
+
+
+
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+
+
+    /**
+     * Set hotel
+     *
+     * @param \Kvartiri\KvartiriBundle\Entity\Hotels $hotel
+     * @return Promotions
+     */
+    public function setHotel(\Kvartiri\KvartiriBundle\Entity\Hotels $hotel = null)
+    {
+        $this->hotel = $hotel;
+
+        return $this;
+    }
+
+    /**
+     * Get hotel
+     *
+     * @return \Kvartiri\KvartiriBundle\Entity\Hotels 
+     */
+    public function getHotel()
+    {
+        return $this->hotel;
+    }
+
+}

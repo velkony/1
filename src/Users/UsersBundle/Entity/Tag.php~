@@ -1,0 +1,30 @@
+<?php
+
+namespace Users\UsersBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Tag
+ *
+ * @ORM\Table()
+ * @ORM\Entity(repositoryClass="Users\UsersBundle\Entity\TagRepository")
+ */
+class Tag
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Users\UsersBundle\Entity\Task", inversedBy="tags", cascade={"persist"})
+     * @ORM\JoinColumn(nullable=true)
+     */
+    public $name;
+
+}

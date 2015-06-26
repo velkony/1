@@ -1,0 +1,86 @@
+<?php
+
+namespace Users\UsersBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * RoomsRequests
+ *
+ * @ORM\Table("rooms_requests")
+ * @ORM\Entity(repositoryClass="Users\UsersBundle\Repository\RoomsRequestsRepository")
+ */
+class RoomsRequests
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="numberRooms", type="integer")
+     */
+    private $numberRooms;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="roomId", type="integer")
+     */
+    private $roomId;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="roomType", type="integer")
+     */
+    private $roomType;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="numberBeds", type="integer")
+     */
+    private $numberBeds;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="extraBed", type="integer")
+     */
+    private $extraBed;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="numberAdults", type="integer")
+     */
+    private $numberAdults;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="numberChildren", type="integer")
+     */
+    private $numberChildren;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="childrenAge", type="string", length=80)
+     */
+    private $childrenAge;
+
+//    /**
+//     * @ORM\ManyToOne(targetEntity="Users\UsersBundle\Entity\ClientsRequests", inversedBy="roomsRequests", cascade={"persist", "remove"})
+//     * @ORM\JoinColumn(nullable=true)
+//     */
+//    private $clientRequest;
+
+}

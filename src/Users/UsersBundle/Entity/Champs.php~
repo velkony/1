@@ -1,0 +1,45 @@
+<?php
+
+namespace Users\UsersBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Champs
+ *
+ * @ORM\Table()
+ * @ORM\Entity(repositoryClass="Users\UsersBundle\Entity\ChampsRepository")
+ */
+class Champs
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="inputlabel", type="string", length=255)
+     */
+    private $inputlabel;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="colonne", type="integer")
+     */
+    private $colonne;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="position", type="integer")
+     */
+    private $position;
+    
+}

@@ -1,0 +1,59 @@
+{% extends "::layout/layoutAdmin.html.twig" %}
+
+{% block body -%}
+
+    <a href="{{path('fos_user_registration_register',{'id':2})}}">Admin registration</a><br>
+    <a href="{{path('fos_user_registration_register',{'id':3})}}">Translator registration</a><br>
+    <a href="{{path('fos_user_registration_register',{'id':4})}}">Company registration</a><br>
+
+    {% if pagination is empty%}
+
+        <h3>No registered users</h3>
+    {%else%}
+
+        <table class="table table-striped">
+
+            <thead><tr>
+
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Roles</th>
+                    <th>Last visit</th>
+                    <th>Status</th>
+                    <th>Show</th>
+                    <th>Delete</th>
+
+
+                </tr></thead>
+
+
+            {% for liste in pagination %}
+
+                <tr>
+
+                    <td>{{liste.username}}</td>
+                    <td>{{liste.email}}</td>
+                    <td>{{liste.roles[0]}}</td>
+                    <td>{{liste.lastLogin|date('d/m/Y H:i:s')}}</td>
+
+                    <td>
+                        {% if liste.enabled == 1 %}  <a href='{{path('StatusUser',{'username' : liste.username,'enable':liste.enabled})}}'> Enabled <i class="icon-ok-sign"></i></a> 
+                            {% elseif liste.enabled is empty %}
+                            <a href="{{path('StatusUser',{'username' : liste.username,'enable':liste.enabled})}}">Disabled <i class="icon-remove-sign"></i></a>
+                            {% endif %}
+
+                    </td>
+                    <th><a href='{{path('updateusers',{id : liste.id })}}'><i class="icon-eye-open"></i></a></th>
+
+                    <td><a href="{{path('deleteusers',{id : liste.id })}}" onclick="return confirm('Voulez vous vraiment supprimer cette agent ?')"><i class="icon-trash"></i></a></td>
+                </tr>
+                <div class="navigation">
+                    {{ knp_pagination_render(pagination) }}
+                </div>
+            {% endfor %}
+
+        </table>
+
+    {% endif %}
+
+{% endblock %}

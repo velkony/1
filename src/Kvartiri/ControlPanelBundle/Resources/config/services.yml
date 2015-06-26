@@ -1,0 +1,4 @@
+services:
+#    kvartiri_control_panel.example:
+#        class: Kvartiri\ControlPanelBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

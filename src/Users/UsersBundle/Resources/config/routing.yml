@@ -1,0 +1,82 @@
+fos_user_security:
+    resource: "@FOSUserBundle/Resources/config/routing/security.xml"
+
+fos_user_profile:
+    resource: "@FOSUserBundle/Resources/config/routing/profile.xml"
+    prefix: /profile
+
+fos_user_register:
+    resource: "@FOSUserBundle/Resources/config/routing/registration.xml"
+    prefix: /register
+
+fos_user_resetting:
+    resource: "@FOSUserBundle/Resources/config/routing/resetting.xml"
+    prefix: /resetting
+
+fos_user_change_password:
+    resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
+    prefix: /profile
+
+
+date_promotions:
+  pattern: /date-promotions/{hotelId}/{dateStart}
+  defaults: { _controller: UsersBundle:Promotions:datePromotions }
+  options:
+      expose: true
+
+
+hotel_client_request:
+    path:     /client-request/hotel/{hotelId}
+    defaults: { _controller: UsersBundle:ClientsRequests:hotel }
+
+clientsrequestsB_create:
+    path:     /client-request-createB/{hotelId}
+    defaults: { _controller: UsersBundle:ClientsRequests:createB }
+
+client_request:
+    path:     /client-request
+    defaults: { _controller: UsersBundle:ClientsRequests:index }
+
+clientsrequests_create:
+    path:     /client-request-create
+    defaults: { _controller: UsersBundle:ClientsRequests:create }
+
+clientsrequests_new:
+    path:     /client-request-new
+    defaults: { _controller: UsersBundle:ClientsRequests:new }
+
+clientsrequests_show:
+    path:     /client-request-show/{id}
+    defaults: { _controller: UsersBundle:ClientsRequests:show }
+
+clientsrequests_edit:
+    path:     /client-request-edit/{id}/edit
+    defaults: { _controller: UsersBundle:ClientsRequests:edit }
+
+clientsrequests_update:
+    path:     /client-request-update/{id}/update
+    defaults: { _controller: UsersBundle:ClientsRequests:update }
+
+clientsrequests_delete:
+    path:     /client-request-update/{id}/delete
+    defaults: { _controller: UsersBundle:ClientsRequests:delete }
+
+
+
+
+#article_show:
+#  path:  /articles/{culture}/{year}/{title}.{_format}
+#  defaults: { _controller: AcmeDemoBundle:Article:show, _format: html }
+#  requirements:
+#      culture:  en|fr
+#      _format:  html|rss
+#      year:     \d+
+
+
+
+
+
+
+#post:
+#    resource: "@UsersBundle/Controller/ClientsRequestsController.php"
+#    type:     annotation

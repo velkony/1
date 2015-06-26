@@ -1,0 +1,112 @@
+{% extends "::layout/layout.html.twig" %}
+
+
+{% block body -%}
+    <h1>ClientsRequests creation</h1>
+
+    {{ form(form) }}
+
+    <div class="promotion1"></div>
+    <ul class="record_actions">
+        <li>
+            <a href="{{ path('client_request') }}">
+                Back to the list
+            </a>
+        </li>
+    </ul>
+
+{% endblock %}
+
+{% block javascripts %}
+
+    <script src="{{ asset('js/clientsRequestForm.js') }}"></script>
+
+{% endblock %}
+
+
+
+{#{% block body %}#}
+    {#<h1>ClientsRequests creation</h1>#}
+
+    {#<form action="" method="POST">#}
+        {#<div class="input-append date" id="dp3" data-date-format="dd/mm/yyyy">#}
+
+            {#<div class="col-md-5 adresseForm" id="ajout_adresse" >#}
+
+                {#<div class="form-group">#}
+                    {#{{ form_widget(form) }}#}
+                {#</div>#}
+
+            {#</div>#}
+
+            {#{{ form_widget(form.dateRequest) }}#}
+            {#{{ form_label(form.checkIn) }}#}
+            {#{{ form_widget(form.checkIn, { 'attr': {'placeholder': "dd/mm/yyyy"} }) }}#}
+            {#<span class="add-on"><i class="icon-th"></i></span>#}
+            {#{{ form_label(form.checkOut) }}#}
+            {#{{ form_widget(form.checkOut, { 'attr': {'placeholder': "dd/mm/yyyy"} }) }}#}
+            {#<span class="add-on"><i class="icon-th"></i></span>#}
+            {#{{ form_label(form.numberNights) }}#}
+            {#{{ form_widget(form.numberNights, { 'attr': {'placeholder': "number of nights"} }) }}#}
+
+            {#{{ form_widget(form.roomsRequests) }}#}
+            {#{{ form_row(form.roomsRequests.vars.prototype.numberRooms) }}#}
+            {#{{ form_row(form.roomsRequests.vars.prototype.roomType) }}#}
+            {#{{ form_row(form.roomsRequests.vars.prototype.numberBeds) }}#}
+            {#{{ form_row(form.roomsRequests.vars.prototype.extraBed) }}#}
+            {#{{ form_row(form.roomsRequests.vars.prototype.numberAdults) }}#}
+            {#{{ form_row(form.roomsRequests.vars.prototype.numberChildren) }}#}
+            {#{{ form_row(form.roomsRequests.vars.prototype.childrenAge) }}#}
+
+            {#{{ form_label(form.breakfast) }}#}
+            {#{{ form_widget(form.breakfast) }}#}
+
+            {#{{ form_label(form.lunch) }}#}
+            {#{{ form_widget(form.lunch) }}#}
+
+            {#{{ form_label(form.dinner) }}#}
+            {#{{ form_widget(form.dinner) }}#}
+
+            {#{{ form_label(form.surname) }}#}
+            {#{{ form_widget(form.surname) }}#}
+
+            {#{{ form_label(form.name) }}#}
+            {#{{ form_widget(form.name) }}#}
+
+            {#{{ form_label(form.gsm) }}#}
+            {#{{ form_widget(form.gsm) }}#}
+
+            {#{{ form_label(form.email) }}#}
+            {#{{ form_widget(form.email) }}#}
+
+            {#{{ form_label(form.fax) }}#}
+            {#{{ form_widget(form.fax) }}#}
+
+            {#{{ form_widget(form.send) }}#}
+
+
+            {#<input id="idHotel" name="idHotel" type="hidden" value="{{ hotel.id }}" />#}
+        {#</div>#}
+
+    {#</form>#}
+
+
+    {#&#123;&#35;<div class="col-md-5 adresseForm" id="ajout_adresse" >&#35;&#125;#}
+
+        {#&#123;&#35;<div class="form-group">&#35;&#125;#}
+            {#&#123;&#35;{{ form_widget(form) }}&#35;&#125;#}
+        {#&#123;&#35;</div>&#35;&#125;#}
+
+    {#&#123;&#35;</div>&#35;&#125;#}
+    {#<ul class="record_actions">#}
+        {#<li>#}
+            {#<a href="{{ path('client_request') }}">#}
+                {#Back to the list#}
+            {#</a>#}
+        {#</li>#}
+    {#</ul>#}
+
+{#{% endblock %}#}
+
+
+

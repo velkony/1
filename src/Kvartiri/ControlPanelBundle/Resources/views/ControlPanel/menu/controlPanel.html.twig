@@ -1,0 +1,20 @@
+{#<div class="well">#}
+    {#<ul class="nav nav-list">#}
+        {#<li class="nav-header"><a href="{{ path('adminRegions') }}">Add Region</a></li>#}
+        {#<li class="nav-header"><a href="{{ path('adminCities') }}">Add City</a></li>#}
+        {#<li class="nav-header"><a href="{{ path('hotelsAdminAddHotel') }}">Add Hotel</a></li>#}
+    {#</ul>#}
+{#</div>#}
+
+<ul class="nav nav-tabs">
+    <li><a href="{{ path('adminRegions') }}">Add Region</a></li>
+    <li><a href="{{ path('adminCities') }}">Add City</a></li>
+    <li><a href="{{ path('hotelsAdminAddHotel') }}">Add Hotel</a></li>
+    <li><a href="{{path('listusers')}}">Users</a></li>
+
+    <li><a href="{{ path('fos_user_profile_show') }}">My Profile</a></li>
+    <li><a href="{{ path('fos_user_profile_edit') }}">Edit my profile</a></li>
+    <li><a href="{{ path('fos_user_change_password') }}">Change my password</a></li>
+    <li><a href="{{ path('fos_user_security_logout') }}">Disconnect</a></li>
+</ul>
+

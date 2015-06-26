@@ -1,0 +1,24 @@
+
+
+{% extends "::layout/layoutAdmin.html.twig" %}
+
+
+
+{% block body -%}
+    <div class="well">
+        <form  {{ form_enctype(form) }} method="POST" class="fos_user_registration_register form-horizontal">
+            <fieldset>
+
+
+                {{ form_widget(form) }}
+                <br>
+
+
+
+                <button class="btn btn-primary" type="submit" value="{{ 'registration.submit'|trans({}, 'FOSUserBundle') }}" >Ajouter</button>
+                <a href="{{path('listusers')}}"><button type="button" class="btn btn-danger"  value="{{ 'registration.submit'|trans({}, 'FOSUserBundle') }}" >Cancel</button></a>
+
+            </fieldset>
+        </form>
+    </div>
+    {% endblock body %}

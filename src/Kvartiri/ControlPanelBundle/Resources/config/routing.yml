@@ -1,0 +1,3 @@
+kvartiri_control_panel_homepage:
+    path:     /controlpanel
+    defaults: { _controller: KvartiriControlPanelBundle:Default:index }
