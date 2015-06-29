@@ -136,10 +136,14 @@ swiftmailer:
 #    username:   "%mailer_user%"
 #    password:   "%mailer_password%"
 #    spool:      { type: memory }
-
+security :
+    providers:
+        fos_userbundle:
+            id: fos_user.user_provider.username_email
 fos_user:
     db_driver: orm
     firewall_name: main
+    
     user_class: Users\UsersBundle\Entity\Users
     registration:
         form:
@@ -170,57 +174,22 @@ hwi_oauth:
         verify_peer: false		
     connect:
         account_connector: my_user_provider
-    firewall_name: secure_area
-
+    firewall_name: main
     fosub:
         username_iterations: 30
         properties:
+            # these properties will be used/redefined later in the custom FOSUBUserProvider service.
             facebook: facebook_id
-    resource_owners:
+
+ 
+    resource_owners:                   
         facebook:
             type:                facebook
-            client_id:           1460839190882785
-            client_secret:       4650e0d2736d3d82552d54dd42612ef7
-            scope:               ""
+            client_id:           112563435749024
+            client_secret:       a68447e15e0cc312b394bd42bcac0657
+            scope:               email
+            options:
+                display: popup	 
 
-
-
-
-
-#hwi_oauth:
-#    # name of the firewall in which this bundle is active, this setting MUST be set
-#    firewall_name: secure_area
-#    connect:
-#        confirmation: true
-#        #account_connector: hwi_oauth.user.provider.fosub_bridge
-#        #registration_form_handler: hwi_oauth.registration.form.handler.fosub_bridge
-#        #registration_form: fos_user.registration.form
-#
-#    resource_owners:
-#        github:
-#            type:                github
-#            client_id:           <client_id>
-#            client_secret:       <client_secret>
-#            scope:               "user:email"
-#
-#    fosub:
-#        # try 30 times to check if a username is available (foo, foo1, foo2 etc)
-#        username_iterations: 30
-#
-#        # mapping between resource owners (see below) and properties
-#        properties:
-#            github: githubID
-
-
-
-
-
-#hwi_oauth:
-#  firewall_name: secured_area
-#  resource_owners:
-#    facebook:
-#      type: facebook
-#      client_id: id_app
-#      client_secret: secret_key_app
 
 

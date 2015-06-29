@@ -42,13 +42,16 @@ class FOSUBUserProvider extends BaseClass
      */
     public function loadUserByOAuthUserResponse(UserResponseInterface $response)
     {
+    	 
         $username = $response->getUsername();
-        $useremail = $response->getEmail();	// get facebook email id
-        $user = $this->userManager->findUserByEmail($useremail);
-        //$user = $this->userManager->findUserBy(array($this->getProperty($response) => $useremail));
+        $email = $response->getEmail();
+        $nickname = $response->getNickname();
+            
+        $user = $this->userManager->findUserBy(array($this->getProperty($response) => $username));
         //when the user is registrating
         if (null === $user) {
             $service = $response->getResourceOwner()->getName();
+                
             $setter = 'set'.ucfirst($service);
             $setter_id = $setter.'Id';
             $setter_token = $setter.'AccessToken';
@@ -56,15 +59,18 @@ class FOSUBUserProvider extends BaseClass
             $user = $this->userManager->createUser();
             $user->$setter_id($username);
             $user->$setter_token($response->getAccessToken());
-            $user->setUsername($useremail);
-            $user->setEmail($useremail);
+            //I have set all requested data with the user's username
+            //modify here with relevant data
+            $user->setUsername($nickname);
+            $user->setEmail($email);
             $user->setPassword($username);
             $user->setEnabled(true);
             $this->userManager->updateUser($user);
-            return $user;
+         return $user;
         }
 
-        $user = $this->userManager->findUserByEmail($useremail);
+        //if user exists - go with the HWIOAuth way
+        $user = parent::loadUserByOAuthUserResponse($response);
 
         $serviceName = $response->getResourceOwner()->getName();
         $setter = 'set' . ucfirst($serviceName) . 'AccessToken';
@@ -74,4 +80,6 @@ class FOSUBUserProvider extends BaseClass
 
         return $user;
     }
+
 }
+
