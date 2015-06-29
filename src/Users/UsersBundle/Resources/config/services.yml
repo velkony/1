@@ -1,23 +1,17 @@
-parameters:
-  my_user_provider.class:  Users\UsersBundle\Security\Core\User\FOSUBUserProvider
 
+parameters:
+    my_user_provider.class: Users\UsersBundle\Security\Core\User\FOSUBUserProvider
 services:
-#    users.example:
-#        class: Users\UsersBundle\Example
-#        arguments: [@service_id, "plain_value", %parameter%]
+
   kvartiri_user.form.handler.registration:
     class: Users\UsersBundle\Form\Handler\RegistrationFormHandler
     arguments: ["@fos_user.registration.form", "@request", "@fos_user.user_manager", "@fos_user.mailer","@fos_user.util.token_generator"]
     scope: request
     public: false
 
-
-#        //t avais deja mis le service poru le form handler?
-#        oui mais pour autre chose
-#        met le bon chemin de la classe qui pointe vers RegistrationFomHandler
-#        je vais te montrer mon service
-
-
   my_user_provider:
     class: "%my_user_provider.class%"
     arguments: [@fos_user.user_manager,{facebook: facebook_id}]
+ 
+    
+    

@@ -1,0 +1,13 @@
+hwi_oauth_login:
+    resource: "@HWIOAuthBundle/Resources/config/routing/login.xml"
+    prefix:   /login
+hwi_oauth_redirect:
+    resource: "@HWIOAuthBundle/Resources/config/routing/redirect.xml"
+    prefix:   /connect
+    
+facebook_login:
+    pattern: /login/check-facebook
+
+oauth_target:
+    pattern: /target
+    defaults: { _controller: UsersUsersBundle:Security:oauthTarget }
