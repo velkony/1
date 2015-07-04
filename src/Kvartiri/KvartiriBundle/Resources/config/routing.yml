@@ -1,3 +1,7 @@
+kvartiri_favorites-hotels:
+    resource: "@KvartiriBundle/Resources/config/favoriteshotels.yml"
+    prefix:   /favorites-hotels
+
 kvartiri_promotions:
     resource: "@KvartiriBundle/Resources/config/routingAdmin/promotions.yml"
     prefix:   /promotions
@@ -60,6 +64,10 @@ season:
     path:     /season/{period}
     defaults: { _controller: KvartiriBundle:Hotels:findSeason }
 
+
+
+
+
 addFavoriteHotel:
     pattern:  /favorite/hotel/{id}
     defaults: { _controller: KvartiriBundle:Selection:addFavoriteHotel }
@@ -68,9 +76,9 @@ removeFavoriteHotel:
     pattern:  /remove/favorite/hotel/{id}
     defaults: { _controller: KvartiriBundle:Selection:removeFavoriteHotel }
 
-favoriteHotels:
+favoritesHotels:
     pattern:  /favorite/hotels
-    defaults: { _controller: KvartiriBundle:Selection:favoriteHotels }
+    defaults: { _controller: KvartiriBundle:Selection:favoritesHotels }
 
 post:
     resource: "@KvartiriBundle/Controller/HotelsAdminController.php"

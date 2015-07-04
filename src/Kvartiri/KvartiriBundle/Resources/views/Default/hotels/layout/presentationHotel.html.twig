@@ -190,19 +190,23 @@
 
 
             </div>
-            <form action="{{ path('addFavoriteHotel', { 'id' : hotel.id }) }}" method="get">
+            <form action="{{ path('favorites-hotels_create') }}" method="POST">
                 <select name="roomId" class="span2">
-                    {#{% for i in 1..10 %}#}
-                    {#<option value="{{ i }}">{{ i }}</option>#}
-                    {#{% endfor %}#}
+
                     {% for room in hotelRooms %}
                         <option value="{{ room['id'] }}">{% include 'KvartiriBundle:Default:hotels/details/roomType.html.twig' %}</option>
                     {% endfor %}
                 </select>
+                <input id="hotelId" name="hotelId" type="hidden" value="{{ hotel.id }}" />
                 <div>
                     <button class="btn btn-primary">Add to favorite hotels</button>
                 </div>
             </form>
+
+
+
+
+
 
             <form action="{{ path('hotel_client_request', { 'hotelId' : hotel.id }) }}" method="post">
                 <input id="hotelId" name="hotelId" type="hidden" value="{{ hotel.id }}" />

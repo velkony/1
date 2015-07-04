@@ -1,0 +1,85 @@
+{% extends "::layout/layout.html.twig" %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+
+            <div class="span3">
+                {% include '::modulesUsed/navigation.html.twig' %}
+                {% render(controller('KvartiriBundle:FavoritesHotels:menu')) %}
+            </div>
+
+            <div class="span9">
+
+                {#{% for flashMessage in app.session.flashbag.get('success') %}#}
+                    {#<div class="alert alert-success">#}
+                        {#{{ flashMessage }}#}
+                    {#</div>#}
+                {#{% endfor %}#}
+
+                <h2>My selected hotels</h2>
+                <table class="table table-striped table-hover">
+                    <thead>
+                    <tr>
+
+                        <th>Image</th>
+                        <th>Hotel Name</th>
+                        <th>Type Room</th>
+                        <th>Prix unitaire</th>
+                        <th>Total HT</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% if entity|length == 0 %}
+                        <tr>
+                            <td colspan="4"><center>Not selected hotel</center></td>
+                        </tr>
+                    {% else %}
+
+                        {% for favoriteHotel in entity.favoriteHotel %}
+                        <tr>
+
+
+                        {#{% for image in hotel.images %}#}
+
+                        {#{% endfor %}#}
+                        <form action="{{ path('favorites-hotels_create') }}" method="POST">
+                            {#<td><img src="{{ asset('img/hotels/'~hotel.images[0].pathIamgeSmall) }}" alt="Greek Hotels" class="img-rounded" style="width:180px;height:135px"></td>#}
+                            <td>
+                                {% if favoriteHotel['images'] %}
+                                    <img src="{{ asset("uploads/"~favoriteHotel['images'][0]['image']) }}" alt="{{ favoriteHotel['images'][0]['image-alt'] }}" class="img-rounded" style="width:90px;height:67px; outline: 1px solid orange">
+                                {% endif %}
+                            </td>
+                            <td>{{ favoriteHotel['hotel-name'] }}</td>
+                            {#{{ dump(asset("uploads/"~favoriteHotel['images'][0]['image'])) }}#}
+                            <td>
+                                <select name="roomId" class="span2" onChange="this.form.submit()">
+
+                                    {% for room in favoriteHotel['hotel-rooms'] %}
+                                        <option value="{{ room['room-id'] }}" {% if room['room-id'] == favoriteHotel['room-id'] %} selected="selected" {% endif %}>{% include 'KvartiriBundle:Default:rooms/details/roomType.html.twig' %}</option>
+                                    {% endfor %}
+                                </select>&nbsp;
+                                <a href="{{ path('favorites-hotels_delete', { 'id' : favoriteHotel['room-id'] }) }}"><i class="icon-trash"></i></a>
+                            </td>
+                            <input id="hotelId" name="hotelId" type="hidden" value="{{ favoriteHotel['hotel-id'] }}" />
+                            <input id="roomIdOld" name="roomIdOld" type="hidden" value="{{ favoriteHotel['room-id'] }}" />
+                        </form>
+                    </tr>
+                    {% endfor %}
+                {% endif %}
+                </tbody>
+                </table>
+
+
+
+
+
+                {#<div class="clearfix"></div>#}
+                {#<a href="{{ path('livraison') }}" class="btn btn-success pull-right">Valider mon panier</a>#}
+                {#{% endif %}#}
+                {#<a href="{{ path('produits') }}" class="btn btn-primary">Continuer mes achats</a>#}
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

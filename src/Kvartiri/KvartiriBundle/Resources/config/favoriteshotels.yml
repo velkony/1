@@ -1,0 +1,12 @@
+favorites-hotels_show:
+    path:     /{user}/show
+    defaults: { _controller: "KvartiriBundle:FavoritesHotels:show" }
+
+favorites-hotels_create:
+    path:     /create
+    defaults: { _controller: "KvartiriBundle:FavoritesHotels:create" }
+    methods:  POST
+
+favorites-hotels_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "KvartiriBundle:FavoritesHotels:delete" }

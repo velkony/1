@@ -22,36 +22,24 @@ class Users extends BaseUser
     public function __construct()
     {
         parent::__construct();
-//        $this->guest = new \Doctrine\Common\Collections\ArrayCollection();
-//        $this->company = new \Doctrine\Common\Collections\ArrayCollection();
+//        $this->favoritesHotels = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
+
+
+    /** @ORM\Column(name="facebook_id", type="string", length=255, nullable=true) */
+    protected $facebook_id;
+
+    /** @ORM\Column(name="facebook_access_token", type="string", length=255, nullable=true) */
+    protected $facebook_access_token;
+
+
     /**
-     * @ORM\OneToOne(targetEntity="Kvartiri\KvartiriBundle\Entity\Guests", mappedBy="user", cascade={"remove"})
+     * @ORM\OneToMany(targetEntity="Kvartiri\KvartiriBundle\Entity\FavoritesHotels", mappedBy="user", cascade={"remove"})
      * @ORM\JoinColumn(nullable=true)
      */
-    private $guest;
+    protected $favoritesHotels;
 
-    /**
-     * @ORM\OneToOne(targetEntity="Kvartiri\KvartiriBundle\Entity\Companies", mappedBy="user", cascade={"remove"})
-     * @ORM\JoinColumn(nullable=true)
-     */
-    private $company;
-
-//    /**
-//     * @var string
-//     *
-//     * @ORM\Column(name="facebook_id", type="string", nullable=true)
-//     */
-//    protected $facebookId;
-
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="github_id", type="string", nullable=true)
-     */
-    private $githubID;
 
 
 
@@ -65,51 +53,85 @@ class Users extends BaseUser
         return $this->id;
     }
 
+
     /**
-     * Set guest
+     * Set facebook_id
      *
-     * @param \Kvartiri\KvartiriBundle\Entity\Guests $guest
-     * @return Users
+     * @param string $facebookId
+     * @return User
      */
-    public function setGuest(\Kvartiri\KvartiriBundle\Entity\Guests $guest = null)
+    public function setFacebookId($facebookId)
     {
-        $this->guest = $guest;
+        $this->facebook_id = $facebookId;
 
         return $this;
     }
 
     /**
-     * Get guest
+     * Get facebook_id
      *
-     * @return \Kvartiri\KvartiriBundle\Entity\Guests 
+     * @return string
      */
-    public function getGuest()
+    public function getFacebookId()
     {
-        return $this->guest;
+        return $this->facebook_id;
     }
 
-
     /**
-     * Set company
+     * Set facebook_access_token
      *
-     * @param \Kvartiri\KvartiriBundle\Entity\Companies $company
-     * @return Users
+     * @param string $facebookAccessToken
+     * @return User
      */
-    public function setCompany(\Kvartiri\KvartiriBundle\Entity\Companies $company = null)
+    public function setFacebookAccessToken($facebookAccessToken)
     {
-        $this->company = $company;
+        $this->facebook_access_token = $facebookAccessToken;
 
         return $this;
     }
 
     /**
-     * Get company
+     * Get facebook_access_token
      *
-     * @return \Kvartiri\KvartiriBundle\Entity\Companies 
+     * @return string
      */
-    public function getCompany()
+    public function getFacebookAccessToken()
     {
-        return $this->company;
+        return $this->facebook_access_token;
     }
 
+
+//
+//    /**
+//     * Add favoritesHotels
+//     *
+//     * @param \Kvartiri\KvartiriBundle\Entity\FavoritesHotels $favoritesHotels
+//     * @return Users
+//     */
+//    public function addFavoritesHotel(\Kvartiri\KvartiriBundle\Entity\FavoritesHotels $favoritesHotels)
+//    {
+//        $this->favoritesHotels[] = $favoritesHotels;
+//
+//        return $this;
+//    }
+//
+//    /**
+//     * Remove favoritesHotels
+//     *
+//     * @param \Kvartiri\KvartiriBundle\Entity\FavoritesHotels $favoritesHotels
+//     */
+//    public function removeFavoritesHotel(\Kvartiri\KvartiriBundle\Entity\FavoritesHotels $favoritesHotels)
+//    {
+//        $this->favoritesHotels->removeElement($favoritesHotels);
+//    }
+//
+//    /**
+//     * Get favoritesHotels
+//     *
+//     * @return \Doctrine\Common\Collections\Collection
+//     */
+//    public function getFavoritesHotels()
+//    {
+//        return $this->favoritesHotels;
+//    }
 }

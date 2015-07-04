@@ -1,0 +1,100 @@
+{% extends "::layout/layout.html.twig" %}
+
+{#{% set totalHT = 0 %}#}
+{#{% set totalTTC = 0%}#}
+{#{% set refTva = {} %}#}
+{#{% for produit in produits %}#}
+    {#{% set refTva = refTva|merge({ ('%' ~ produit.tva.valeur) : 0 }) %}#}
+{#{% endfor %}#}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        
+        <div class="span3">
+            {% include '::modulesUsed/navigation.html.twig' %}
+            {% render(controller('KvartiriBundle:Selection:menu')) %}
+        </div>
+        
+        <div class="span9">
+            
+            {% for flashMessage in app.session.flashbag.get('success') %}
+                <div class="alert alert-success">
+                    {{ flashMessage }}
+                </div>
+            {% endfor %}
+            
+            <h2>My selected hotels</h2>
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+
+                        <th>Image</th>
+                        <th>Hotel Name</th>
+                        <th>Type Room</th>
+                        <th>Prix unitaire</th>
+                        <th>Total HT</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% if hotels|length == 0 %}
+                        <tr>
+                            <td colspan="4"><center>Not selected hotel</center></td>
+                        </tr>
+                    {% endif %}
+
+                    {% for hotel in hotels %}
+                    <tr>
+                        {#{% for image in hotel.images %}#}
+                            {#{{ dump(image.pathIamgeSmall) }}#}
+                        {#{% endfor %}#}
+                        <form action="{{ path('addFavoriteHotel', { 'id' : hotel.id }) }}" method="get">
+                            {#<td><img src="{{ asset('img/hotels/'~hotel.images[0].pathIamgeSmall) }}" alt="Greek Hotels" class="img-rounded" style="width:180px;height:135px"></td>#}
+                            <td>{{ hotel.name }}</td>
+                            <td>
+                                <select name="roomId" class="span2" onChange="this.form.submit()">
+
+                                    {% for room in hotel.rooms %}
+                                        <option value="{{ room.id }}" {% if room.id == favoritesHotels[hotel.id] %} selected="selected" {% endif %}>{% include 'KvartiriBundle:Default:rooms/details/roomType.html.twig' %}</option>
+                                    {% endfor %}
+
+                                    {#{% for i in 1..10 %}#}
+                                        {#<option value="{{ i }}" {% if i == favoriteHotels[hotel.id] %} selected="selected" {% endif %}>{{ i }}</option>#}
+                                    {#{% endfor %}#}
+                                </select>&nbsp;
+                                <a href="{{ path('removeFavoriteHotel', { 'id' : hotel.id }) }}"><i class="icon-trash"></i></a>
+                            </td>
+                            {#<td>{{ produit.prix }} €</td>#}
+                            {#<td>{{ produit.prix * favoriteHotels[hotel.id] }} €</td>#}
+                        </form>
+                    </tr>
+                    {#{% set totalHT = totalHT + (produit.prix * panier[produit.id]) %}#}
+                    {#{% set totalTTC = totalTTC + (produit.prix * panier[produit.id])|tva(produit.tva.multiplicate) %}#}
+                    {#{% set refTva = refTva|merge({ ('%' ~ produit.tva.valeur) : refTva['%' ~ produit.tva.valeur] + ( produit.prix * panier[produit.id])|montantTva(produit.tva.multiplicate) }) %}#}
+                    {% endfor %}
+                </tbody>
+            </table>
+
+
+            {#{{ dump(user.email) }}#}
+
+
+            {#{% if produits|length != 0 %}#}
+            {#<dl class="dl-horizontal pull-right">#}
+                {#<dt>Total HT :</dt><dd>{{ totalHT }} €</dd>#}
+                {##}
+                {#{% for key, tva in refTva %}#}
+                    {#<dt>TVA {{ key }} :</dt><dd>{{ tva }} €</dd>#}
+                {#{% endfor %}#}
+
+                {#<dt>Total TTC :</dt><dd>{{ totalTTC }} €</dd>#}
+            {#</dl>#}
+            {#<div class="clearfix"></div>#}
+            {#<a href="{{ path('livraison') }}" class="btn btn-success pull-right">Valider mon panier</a>#}
+            {#{% endif %}#}
+            {#<a href="{{ path('produits') }}" class="btn btn-primary">Continuer mes achats</a>#}
+        </div>
+
+    </div>
+</div>
+{% endblock %}

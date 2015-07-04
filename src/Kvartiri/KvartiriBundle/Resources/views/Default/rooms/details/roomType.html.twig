@@ -1,15 +1,15 @@
-{% if room.roomType == 1 %}
+{% if room['room-type'] == 1 %}
     {{ 'Single Room' }}
-{% elseif room.roomType == 2 %}
+{% elseif room['room-type'] == 2 %}
     {{ 'Double Room' }}
-{% elseif room.roomType == 3 %}
+{% elseif room['room-type'] == 3 %}
     {{ 'Triple Room' }}
-{% elseif room.roomType == 4 %}
+{% elseif room['room-type'] == 4 %}
     {{ 'Quadruple Room' }}
-{% elseif room.roomType ==5  %}
+{% elseif room['room-type'] ==5  %}
     {{ 'Apartment' }}
-{% elseif room.roomType == 6 %}
+{% elseif room['room-type'] == 6 %}
     {{ 'Studio' }}
-{% elseif room.roomType == 7 %}
+{% elseif room['room-type'] == 7 %}
     {{ 'Suite' }}
 {% endif %}

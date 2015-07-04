@@ -22,22 +22,8 @@ class Users extends BaseUser
     public function __construct()
     {
         parent::__construct();
-//        $this->guest = new \Doctrine\Common\Collections\ArrayCollection();
-//        $this->company = new \Doctrine\Common\Collections\ArrayCollection();
+//        $this->favoritesHotels = new \Doctrine\Common\Collections\ArrayCollection();
     }
-
-    /**
-     * @ORM\OneToOne(targetEntity="Kvartiri\KvartiriBundle\Entity\Guests", mappedBy="user", cascade={"remove"})
-     * @ORM\JoinColumn(nullable=true)
-     */
-    private $guest;
-
-    /**
-     * @ORM\OneToOne(targetEntity="Kvartiri\KvartiriBundle\Entity\Companies", mappedBy="user", cascade={"remove"})
-     * @ORM\JoinColumn(nullable=true)
-     */
-    private $company;
-
 
 
 
@@ -48,25 +34,12 @@ class Users extends BaseUser
     protected $facebook_access_token;
 
 
-
-
-
-
-
 //    /**
-//     * @var string
-//     *
-//     * @ORM\Column(name="facebook_id", type="string", nullable=true)
+//     * @ORM\OneToMany(targetEntity="Kvartiri\KvartiriBundle\Entity\FavoritesHotels", mappedBy="user", cascade={"remove"})
+//     * @ORM\JoinColumn(nullable=true)
 //     */
-//    protected $facebookId;
+//    protected $favoritesHotels;
 
-
-//    /**
-//     * @var string
-//     *
-//     * @ORM\Column(name="github_id", type="string", nullable=true)
-//     */
-//    private $githubID;
 
 
 
@@ -80,52 +53,6 @@ class Users extends BaseUser
         return $this->id;
     }
 
-    /**
-     * Set guest
-     *
-     * @param \Kvartiri\KvartiriBundle\Entity\Guests $guest
-     * @return Users
-     */
-    public function setGuest(\Kvartiri\KvartiriBundle\Entity\Guests $guest = null)
-    {
-        $this->guest = $guest;
-
-        return $this;
-    }
-
-    /**
-     * Get guest
-     *
-     * @return \Kvartiri\KvartiriBundle\Entity\Guests 
-     */
-    public function getGuest()
-    {
-        return $this->guest;
-    }
-
-
-    /**
-     * Set company
-     *
-     * @param \Kvartiri\KvartiriBundle\Entity\Companies $company
-     * @return Users
-     */
-    public function setCompany(\Kvartiri\KvartiriBundle\Entity\Companies $company = null)
-    {
-        $this->company = $company;
-
-        return $this;
-    }
-
-    /**
-     * Get company
-     *
-     * @return \Kvartiri\KvartiriBundle\Entity\Companies 
-     */
-    public function getCompany()
-    {
-        return $this->company;
-    }
 
     /**
      * Set facebook_id
@@ -173,5 +100,39 @@ class Users extends BaseUser
         return $this->facebook_access_token;
     }
 
+
+//
+//    /**
+//     * Add favoritesHotels
+//     *
+//     * @param \Kvartiri\KvartiriBundle\Entity\FavoritesHotels $favoritesHotels
+//     * @return Users
+//     */
+//    public function addFavoritesHotel(\Kvartiri\KvartiriBundle\Entity\FavoritesHotels $favoritesHotels)
+//    {
+//        $this->favoritesHotels[] = $favoritesHotels;
+//
+//        return $this;
+//    }
+//
+//    /**
+//     * Remove favoritesHotels
+//     *
+//     * @param \Kvartiri\KvartiriBundle\Entity\FavoritesHotels $favoritesHotels
+//     */
+//    public function removeFavoritesHotel(\Kvartiri\KvartiriBundle\Entity\FavoritesHotels $favoritesHotels)
+//    {
+//        $this->favoritesHotels->removeElement($favoritesHotels);
+//    }
+//
+//    /**
+//     * Get favoritesHotels
+//     *
+//     * @return \Doctrine\Common\Collections\Collection
+//     */
+//    public function getFavoritesHotels()
+//    {
+//        return $this->favoritesHotels;
+//    }
 
 }

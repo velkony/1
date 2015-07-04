@@ -1,0 +1,16 @@
+<div class="well">
+    <ul class="nav nav-list">
+        <li class="nav-header">My selected hotels</li>
+        <li>
+            <a href="{{ path('favorites-hotels_show', { 'user' : user }) }}">
+                {% if selectedHotels == 0 %}
+                    Not selected hotel
+                {% elseif selectedHotels == 1 %}
+                    1 selected hotel
+                {% else %}
+                    {{ selectedHotels }} selected hotels
+                {% endif %}
+            </a>
+        </li>
+    </ul>
+</div>

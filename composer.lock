@@ -865,12 +865,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfSymfony/FOSJsRoutingBundle.git",
-                "reference": "fbc7c38816aae80416a2f891873d648e14ceb20c"
+                "reference": "0b102317cfb4d4f2a8250b9a5dc3480a9cebfb01"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSJsRoutingBundle/zipball/fbc7c38816aae80416a2f891873d648e14ceb20c",
-                "reference": "fbc7c38816aae80416a2f891873d648e14ceb20c",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSJsRoutingBundle/zipball/0b102317cfb4d4f2a8250b9a5dc3480a9cebfb01",
+                "reference": "0b102317cfb4d4f2a8250b9a5dc3480a9cebfb01",
                 "shasum": ""
             },
             "require": {
@@ -915,7 +915,7 @@
                 "javascript",
                 "routing"
             ],
-            "time": "2015-05-19 15:57:18"
+            "time": "2015-06-29 21:36:23"
         },
         {
             "name": "friendsofsymfony/user-bundle",

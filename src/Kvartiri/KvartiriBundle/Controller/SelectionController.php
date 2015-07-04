@@ -3,6 +3,7 @@
 namespace Kvartiri\KvartiriBundle\Controller;
 
 use Kvartiri\KvartiriBundle\Form\SelectRoomType;
+use Kvartiri\KvartiriBundle\Entity\FavoritesHotels;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Session\Session;
 
@@ -19,40 +20,105 @@ class SelectionController extends Controller
         return $this->render('KvartiriBundle:Default:selection/modulesUsed/favoriteHotels.html.twig', array('selectedHotels' => $selectedHotels));
     }
 
+//    public function selectedHotel()
+//    {
+//        $em = $this->getDoctrine()->getManager();
+//        $generator = $this->container->get('security.secure_random');
+//        $session = $this->getRequest()->getSession();
+//        $favoritesHotels = $session->get('favoritesHotels');
+//        $action = array();
+//
+//        $produits = $em->getRepository('EcommerceBundle:Produits')->findArray(array_keys($session->get('favoritesHotels')));
+//
+//        foreach($produits as $produit)
+//        {
+//            $prixHT = ($produit->getPrix() * $panier[$produit->getId()]);
+//            $prixTTC = ($produit->getPrix() * $panier[$produit->getId()] / $produit->getTva()->getMultiplicate());
+//            $totalHT += $prixHT;
+//
+//            if (!isset($commande['tva']['%'.$produit->getTva()->getValeur()]))
+//                $commande['tva']['%'.$produit->getTva()->getValeur()] = round($prixTTC - $prixHT,2);
+//            else
+//                $commande['tva']['%'.$produit->getTva()->getValeur()] += round($prixTTC - $prixHT,2);
+//
+//
+//            $action['produit'][$produit->getId()] = array('reference' => $produit->getNom(),
+//                'quantite' => $panier[$produit->getId()],
+//                'prixHT' => round($produit->getPrix(),2),
+//                'prixTTC' => round($produit->getPrix() / $produit->getTva()->getMultiplicate(),2));
+//        }
+//
+//
+//        return $action;
+//    }
+
+
+
+
     public function addFavoriteHotelAction($id)
     {
-        $favoriteHotels = array();
+//        $session = $this->getRequest()->getSession();
+
+//
+//        if (!$session->has('favoritesHotels'))
+//            $action = new FavoritesHotels();
+//        else
+//            $action = $em->getRepository('KvartiriBundle:FavoritesHotels')->find($session->get('favoritesHotels'));
+//
+//
+//        $action->setUser($this->container->get('security.context')->getToken()->getUser());
+//        $action->setFavoriteHotel($this->facture());
+//
+        $id = 1;
+        $em = $this->getDoctrine()->getManager();
+//        $entity = new FavoritesHotels();
+        $entity = $em->getRepository('KvartiriBundle:FavoritesHotels')->find($id);
+//        $user = $this->container->get('security.context')->getToken()->getUser());
+
+
+
+
+
+        $favoritesHotels = array();
         $session = $this->getRequest()->getSession();
 
-        if (!$session->has('favoriteHotels')) $session->set('favoriteHotels',array());
-        $favoriteHotels = $session->get('favoriteHotels');
+        if (!$session->has('favoritesHotels')) $session->set('favoritesHotels',array());
+        $favoritesHotels = $session->get('favoritesHotels');
 
-//        print_r($favoriteHotels);
-        if (array_key_exists($id, $favoriteHotels)) {
-           print_r('je suis dans la boucle 1');
-            if ($this->getRequest()->query->get('roomId') != null) $favoriteHotels[$id] = $this->getRequest()->query->get('roomId');
+//        print_r($favoritesHotels);
+        if (array_key_exists($id, $favoritesHotels)) {
+//           print_r('je suis dans la boucle 1');
+            if ($this->getRequest()->query->get('roomId') != null) $favoritesHotels[$id] = $this->getRequest()->query->get('roomId');
             $this->get('session')->getFlashBag()->add('success','The type of room has been successfully changed');
         } else {
-            print_r('je suis dans la boucle 2');
+//            print_r('je suis dans la boucle 2');
 
             if ($this->getRequest()->query->get('roomId') != null)
-                $panier[$id] = $this->getRequest()->query->get('roomId');
+                $favoritesHotels[$id] = $this->getRequest()->query->get('roomId');
             else
-                print_r('je suis dans la boucle favorite');
+//                print_r('je suis dans la boucle favorite');
 
-                $favoriteHotels[$id] = 1;
+                $favoritesHotels[$id] = 1;
 
             $this->get('session')->getFlashBag()->add('success','The selected hotel has been added');
         }
-//        print_r($favoriteHotels);
+//        print_r($favoritesHotels);
 
-        $session->set('favoriteHotels', $favoriteHotels);
+        $session->set('favoritesHotels', $favoritesHotels);
 
-     return $this->redirect($this->generateUrl('favoriteHotels'));
+        $entity->setFavoriteHotel($favoritesHotels);
+        $user = $this->container->get('security.context')->getToken()->getUser();
+        $entity->setUser($user);
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($entity);
+        $em->flush();
 
-//        var_dump($session->get('favoriteHotels'));
+
+     return $this->redirect($this->generateUrl('favoritesHotels'));
+
+//        var_dump($session->get('favoritesHotels'));
 //        die();
-//        return $this->render('KvartiriBundle:Default:selection/layout/favoriteHotels.html.twig');
+//        return $this->render('KvartiriBundle:Default:selection/layout/favoritesHotels.html.twig');
 
 //ou a ete le probleme
     }
@@ -60,31 +126,37 @@ class SelectionController extends Controller
     public function removeFavoriteHotelAction($id)
     {
         $session = $this->getRequest()->getSession();
-        $favoriteHotels = $session->get('favoriteHotels');
+        $favoritesHotels = $session->get('favoritesHotels');
 
-        if (array_key_exists($id, $favoriteHotels))
+        if (array_key_exists($id, $favoritesHotels))
         {
-            unset($favoriteHotels[$id]);
-            $session->set('favoriteHotels',$favoriteHotels);
+            unset($favoritesHotels[$id]);
+            $session->set('favoritesHotels',$favoritesHotels);
             $this->get('session')->getFlashBag()->add('success','Selected hotel has been successfully removed');
         }
 
-        return $this->redirect($this->generateUrl('favoriteHotels'));
+        return $this->redirect($this->generateUrl('favoritesHotels'));
     }
 
-    public function favoriteHotelsAction()
+    public function favoritesHotelsAction()
     {
         $session = $this->getRequest()->getSession();
-        if (!$session->has('favoriteHotels')) $session->set('favoriteHotels', array());
+        if (!$session->has('favoritesHotels')) $session->set('favoritesHotels', array());
 
         $em = $this->getDoctrine()->getManager();
-        $hotels = $em->getRepository('KvartiriBundle:Hotels')->findArray(array_keys($session->get('favoriteHotels')));
+        $hotels = $em->getRepository('KvartiriBundle:Hotels')->findArray(array_keys($session->get('favoritesHotels')));
 
-        return $this->render('KvartiriBundle:Default:selection/layout/favoriteHotels.html.twig', array('hotels' => $hotels,
-            'favoriteHotels' => $session->get('favoriteHotels')));
-//        var_dump($session->get('favoriteHotels'));
+
+//        $user = $this->container->get('security.context')->getToken()->getUser();
+
+
+
+
+        return $this->render('KvartiriBundle:Default:selection/layout/favoritesHotels.html.twig', array('hotels' => $hotels,
+            'favoritesHotels' => $session->get('favoritesHotels')));
+//        var_dump($session->get('favoritesHotels'));
 //        die();
-//        return $this->render('KvartiriBundle:Default:selection/layout/favoriteHotels.html.twig');
+//        return $this->render('KvartiriBundle:Default:selection/layout/favoritesHotels.html.twig');
     }
 
 
